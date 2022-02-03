@@ -1,0 +1,113 @@
+.table {
+  width: 100%;
+  padding: 40px 20px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.table__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.table__header--buttons {
+  display: flex;
+}
+.table__header--buttons button {
+  padding: 9px 60px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 8px;
+}
+
+.table__header--btn_sell {
+  margin-right: 15px;
+}
+.table__header--btn_sell button {
+  background-color: #ffc600;
+  color: #11468f;
+}
+
+.table__header--btn_notSell button {
+  background-color: #a5a5a5;
+  color: #fff;
+}
+
+.table__header--years button {
+  margin-right: 15px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #1d2746;
+  font-weight: 700;
+  font-size: 12px;
+}
+.table__header--years button.active {
+  padding: 9px 12px;
+  color: #f6d912;
+  background-color: #1d2746;
+}
+.table__header--years button:last-child {
+  margin-right: 0;
+}
+
+/* ..................................... */
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+.table__content {
+  font-size: 12px;
+  color: #030d2e;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+}
+
+.table_title {
+  margin-bottom: 40px;
+  text-align: center;
+  /* padding: 5px; */
+  width: 100%;
+  border-radius: 8px;
+}
+.table__item .table_title.first {
+  text-align: left;
+  padding: 9px 10px 9px 5px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #030d2e;
+}
+
+.table_title button {
+  /* margin-right: 15px; */
+  padding: 9px 10px;
+  border-radius: 8px;
+  /* background-color: transparent; */
+  background-color: #eeeeee;
+
+  color: #1d2746;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.table_title._active button {
+  /* padding: 9px 12px; */
+  color: #f6d912;
+  background-color: #1d2746;
+}
+
+.table__column {
+  padding: 5px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.table__column .table__cell {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.table__item:first-child .table__column .table__cell {
+  text-align: left;
+}
+.table__item._active .table__column {
+  background-color: #fce9a8;
+}

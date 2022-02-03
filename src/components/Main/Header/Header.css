@@ -1,0 +1,35 @@
+.header {
+  margin-bottom: 30px;
+}
+.header__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__title {
+  width: 60%;
+  display: flex;
+  justify-content: end;
+}
+.header__title h1 {
+  cursor: pointer;
+  color: #11468f;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.header__assets {
+  width: 50%;
+  display: flex;
+  justify-content: end;
+}
+.header__assets ul {
+  display: flex;
+  align-items: center;
+}
+.header__assets ul li {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+  cursor: pointer;
+}
