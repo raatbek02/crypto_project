@@ -42,12 +42,12 @@ function Table() {
   const column_arr = [
     {
       id: 1,
-      title: "Месяц",
-      per_month: "В месяц",
-      totality: "Совокупность",
-      price: "Примерная цена",
-      price_device: "Доступно $ (за 1 аппарат)",
-      price_per_quantity: "Доступно $ (за n аппаратов)",
+      title: "Month",
+      per_month: "Per month",
+      totality: "totality",
+      price: "Price",
+      price_device: "Price per 1 device",
+      price_per_quantity: "Price per n device",
     },
   ];
 
@@ -83,7 +83,7 @@ function Table() {
       .get(`api/table-products/?page=${active_yearNum}`)
       .then(({ data }) => {
         setProducts(data);
-      //   console.log("getProducts", data);
+        //   console.log("getProducts", data);
       })
       .catch((e) => {
         //   console.log(e);
@@ -155,7 +155,7 @@ function Table() {
           },
         })
         .then((res) => {
-         //  console.log("Prev post", res);
+          //  console.log("Prev post", res);
           success_cancel();
           setActive_month(null);
           setSell_id(null);
@@ -169,7 +169,7 @@ function Table() {
         .get(`api/table-products/?page=${active_yearNum}`)
         .then(({ data }) => {
           setProducts(data);
-         //  console.log("Prev Products", data);
+          //  console.log("Prev Products", data);
         })
         .catch((e) => {
           //   console.log(e);
@@ -248,7 +248,7 @@ function Table() {
 
       <div className="table__content">
         <div className="table__item">
-          <p className="table_title first">Месяц</p>
+          <p className="table_title first">Month</p>
 
           {column_arr.map((el) => (
             <div key={el.id} className="table__column">

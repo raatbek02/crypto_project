@@ -122,7 +122,7 @@ function Counter() {
             <div className="counter__title">{el.product.title}</div>
             <div className="counter__content">
               <div className="counter__item">
-                <p className="counter__item--left">Количество аппаратов</p>
+                <p className="counter__item--left">Quantity of device</p>
                 <div className="counter__item--button">
                   <button
                     onClick={() => {
@@ -147,7 +147,7 @@ function Counter() {
                 </div>
               </div>
               <div className="counter__item">
-                <p className="counter__item--left">Цена за аппарата</p>
+                <p className="counter__item--left">Price</p>
                 {/* <p className="counter__item--button">{el.product.price}$</p> */}
                 <p className="counter__item--right">
                   <p className="counter__item--right--input">
@@ -162,7 +162,7 @@ function Counter() {
                 </p>
               </div>{" "}
               <div className="counter__item">
-                <p className="counter__item--left">Итого:</p>
+                <p className="counter__item--left">Total:</p>
                 <div className="counter__item--right">
                   {el.product.price * el.quantity}$
                   {/* {price * el.quantity}$ */}
