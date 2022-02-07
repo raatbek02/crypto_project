@@ -188,7 +188,7 @@ function Table() {
               <button onClick={() => sell_product()}>SELL</button>
             </div>
             <div className="table__header--btn_notSell">
-              <button onClick={() => notSell_product()}>Not sell</button>
+              <button onClick={() => notSell_product()}>CANCEL SELL</button>
             </div>
           </div>
         </div>

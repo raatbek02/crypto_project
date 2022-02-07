@@ -8,12 +8,18 @@ import right from "../../../assets/images/middleContent_images/right.svg";
 import { minusDevice, plusDevice } from "../../../store/device_count";
 
 import "./Counter.css";
+import { toast } from "react-toastify";
 
 function Counter() {
   const [count, setCount] = useState(1);
   const [device, setDevice] = useState([]);
-  const dispatch = useDispatch();
+  const [typing_price, setTyping_price] = useState("25000");
+  const [price, setPrice] = useState("");
 
+  const warn_price = () => toast.warn("price must be above 25000");
+  console.log("price", price);
+  const dispatch = useDispatch();
+  console.log("device", device);
   useEffect(() => {
     $host
       .get(`api/device-item/`)
@@ -79,55 +85,92 @@ function Counter() {
       });
   };
 
+  const typingPriceHandler = async (e) => {
+    const data_2 = {
+      price: typing_price,
+    };
+
+    //  setPrice(typing_price);
+
+    if (Number(typing_price) >= 25000 && e.key === "Enter") {
+      await $host.put(`api/device/1/`, data_2, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      await $host.get(`api/device-item/`).then(({ data }) => {
+        setDevice(data);
+      });
+    } else {
+      warn_price();
+    }
+    // else if (typing_price === "" && e.key === "Enter") {
+    //       setPrice(0);
+    //     }
+  };
   return (
     <div className="counter">
-      {device.map((el) => (
-        <div key={el.id}>
-          {localStorage.setItem(
-            "device_local_price",
-            JSON.stringify(el.product.price)
-          )}
+      {device &&
+        device.map((el) => (
+          <div key={el.id}>
+            {localStorage.setItem(
+              "device_local_price",
+              JSON.stringify(el.product.price)
+            )}
 
-          <div className="counter__title">{el.product.title}</div>
-          <div className="counter__content">
-            <div className="counter__item">
-              <p className="counter__item--left">Количество аппаратов</p>
-              <div className="counter__item--button">
-                <button
-                  onClick={() => {
-                    setCount(count > 1 ? count - 1 : 1);
-                    //   dispatch(minusDevice(1));
-                    minus_qnt(1);
-                  }}
-                >
-                  <img src={left} alt="" />
-                </button>
+            <div className="counter__title">{el.product.title}</div>
+            <div className="counter__content">
+              <div className="counter__item">
+                <p className="counter__item--left">Количество аппаратов</p>
+                <div className="counter__item--button">
+                  <button
+                    onClick={() => {
+                      setCount(count > 1 ? count - 1 : 1);
+                      //   dispatch(minusDevice(1));
+                      minus_qnt(1);
+                    }}
+                  >
+                    <img src={left} alt="" />
+                  </button>
 
-                <p>{el.quantity}</p>
-                <button
-                  onClick={() => {
-                    setCount(count + 1);
-                    //   dispatch(plusDevice(1));
-                    plus_qnt(1);
-                  }}
-                >
-                  <img src={right} alt="" />
-                </button>
+                  <p>{el.quantity}</p>
+                  <button
+                    onClick={() => {
+                      setCount(count + 1);
+                      //   dispatch(plusDevice(1));
+                      plus_qnt(1);
+                    }}
+                  >
+                    <img src={right} alt="" />
+                  </button>
+                </div>
               </div>
-            </div>
-            <div className="counter__item">
-              <p className="counter__item--left">Цена за аппарата</p>
-              <p className="counter__item--button">{el.product.price}$</p>
-            </div>{" "}
-            <div className="counter__item">
-              <p className="counter__item--left">Итого:</p>
-              <div className="counter__item--button">
-                {el.product.price * el.quantity}$
+              <div className="counter__item">
+                <p className="counter__item--left">Цена за аппарата</p>
+                {/* <p className="counter__item--button">{el.product.price}$</p> */}
+                <p className="counter__item--right">
+                  <p className="counter__item--right--input">
+                    <input
+                      type={"text"}
+                      onChange={(e) => setTyping_price(e.target.value)}
+                      onKeyDown={(e) => typingPriceHandler(e)}
+                      placeholder={el.product.price}
+                    />
+                    $
+                  </p>
+                </p>
+              </div>{" "}
+              <div className="counter__item">
+                <p className="counter__item--left">Итого:</p>
+                <div className="counter__item--right">
+                  {el.product.price * el.quantity}$
+                  {/* {price * el.quantity}$ */}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
     </div>
   );
 }

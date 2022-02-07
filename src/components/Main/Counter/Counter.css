@@ -57,3 +57,22 @@
   border-radius: 5px;
   margin: 0 8px;
 }
+
+.counter__item--right--input {
+  width: 70px;
+  display: flex;
+  align-items: center;
+  padding: 2px 5px;
+  border: 1px solid #a7a7a7;
+  border-radius: 8px;
+  /* margin-right: 5px; */
+}
+.counter__item--right--input input {
+  width: 90%;
+}
+input[type="text"] {
+  color: #030d2e;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+}
