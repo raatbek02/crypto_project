@@ -5,7 +5,8 @@ const bitcoin_data = localStorage.getItem("bitcoin_data");
 const coin_detail = createSlice({
   name: "coin_detail",
   initialState: {
-    coin_detail: JSON.parse(bitcoin_data),
+    coin_detail: {} || JSON.parse(bitcoin_data),
+    //  coin_detail: {},
   },
   reducers: {
     add_coinDetail(state, action) {

@@ -15,7 +15,7 @@
   margin-left: 30px;
 }
 .categories__items {
-  /* width: 100%; */
+  width: 100%;
   display: flex;
   /* justify-content: space-between;
   align-items: center; */
@@ -36,6 +36,9 @@
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
+}
+.categories__item._active {
+  background-color: #ffc600;
 }
 .categories__item--left {
   margin-right: 10px;

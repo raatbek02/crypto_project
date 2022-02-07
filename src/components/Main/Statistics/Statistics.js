@@ -17,9 +17,9 @@ function Statistics() {
 
   const bitcoin_data = coins[0];
   localStorage.setItem("bitcoin_data", JSON.stringify(bitcoin_data));
-	console.log("bitcoin_data", bitcoin_data);
-  console.log("coin_detail", coin_detail);
-  console.log("coin_id", coin_id);
+//   console.log("bitcoin_data", bitcoin_data);
+//   console.log("coin_detail", coin_detail);
+//   console.log("coin_id", coin_id);
 
   const determineTimeFormat = () => {
     switch (timeFormat) {
@@ -88,24 +88,50 @@ function Statistics() {
     <div className="statistics">
       <div className="statistics__header">
         <div className="statistics__header--left">
-          <span style={{ marginRight: "5px" }}>
-            {coin_detail && coin_detail.name}
-          </span>
-          <span style={{ marginRight: "5px" }}>
-            {coin_detail && coin_detail.current_price}$
-          </span>
-          {coin_detail && coin_detail.price_change_percentage_24h > 0 ? (
-            <span style={{ color: "#05fb1e" }}>
-              {coin_detail &&
-                coin_detail.price_change_percentage_24h.toFixed(2)}
-              %
-            </span>
+          {Object.entries(coin_detail).length > 0 ? (
+            <>
+              <span style={{ marginRight: "5px" }}>
+                {coin_detail && coin_detail.name}
+              </span>
+              <span style={{ marginRight: "5px" }}>
+                {coin_detail && coin_detail.current_price}$
+              </span>
+              {coin_detail && coin_detail.price_change_percentage_24h > 0 ? (
+                <span style={{ color: "#05fb1e" }}>
+                  {coin_detail &&
+                    coin_detail.price_change_percentage_24h.toFixed(2)}
+                  %
+                </span>
+              ) : (
+                <span style={{ color: "#FB0505", fontSize: "10px" }}>
+                  {coin_detail &&
+                    coin_detail.price_change_percentage_24h.toFixed(2)}
+                  %
+                </span>
+              )}
+            </>
           ) : (
-            <span style={{ color: "#FB0505", fontSize: "10px" }}>
-              {coin_detail &&
-                coin_detail.price_change_percentage_24h.toFixed(2)}
-              %
-            </span>
+            <>
+              <span style={{ marginRight: "5px" }}>
+                {bitcoin_data && bitcoin_data.name}
+              </span>
+              <span style={{ marginRight: "5px" }}>
+                {bitcoin_data && bitcoin_data.current_price}$
+              </span>
+              {bitcoin_data && bitcoin_data.price_change_percentage_24h > 0 ? (
+                <span style={{ color: "#05fb1e" }}>
+                  {bitcoin_data &&
+                    bitcoin_data.price_change_percentage_24h.toFixed(2)}
+                  %
+                </span>
+              ) : (
+                <span style={{ color: "#FB0505", fontSize: "10px" }}>
+                  {bitcoin_data &&
+                    bitcoin_data.price_change_percentage_24h.toFixed(2)}
+                  %
+                </span>
+              )}
+            </>
           )}
         </div>
         <div className="statistics__header--right">

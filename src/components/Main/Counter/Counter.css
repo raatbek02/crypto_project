@@ -11,6 +11,7 @@
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 25px;
+  margin-top: 20px;
 }
 
 .counter__item {
@@ -22,12 +23,14 @@
   padding: 20px 0;
   border-bottom: 1px solid #cdcdcd;
 }
+
 .counter__item:first-child {
   padding-top: 0;
 }
 .counter__item:last-child {
   /* padding-bottom: 0; */
   border-bottom: none;
+  padding-bottom: 0;
 }
 
 .counter__item--button {

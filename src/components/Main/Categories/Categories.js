@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+
 import SwiperCore, { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 
-// import btc from "../../../assets/images/categories_images/btc.png";
-// import etc from "../../../assets/images/categories_images/etc.png";
-// import eth from "../../../assets/images/categories_images/eth.png";
-// import xmr from "../../../assets/images/categories_images/xmr.png";
-// import zec from "../../../assets/images/categories_images/zec.png";
 import left from "../../../assets/images/categories_images/left.png";
 import right from "../../../assets/images/categories_images/right.png";
 
@@ -22,10 +18,12 @@ import { add_coinDetail } from "../../../store/coin_detail";
 SwiperCore.use([Autoplay, Pagination]);
 
 function Categories() {
-  //   const [coins, setCoins] = useState([]);
-
+  //  const [coins, setCoins] = useState([]);
+  const [activeCategory, setActiveCategory] = useState("bitcoin");
   const dispatch = useDispatch();
   const coins = useSelector((s) => s.coins_store.coins);
+
+  localStorage.setItem("bitcoin_data", JSON.stringify(coins[0]));
 
   useEffect(() => {
     axios
@@ -35,7 +33,7 @@ function Categories() {
       )
       .then(({ data }) => {
         dispatch(addCoins(data));
-        console.log(data);
+        //   console.log(data);
       });
   }, []);
   return (
@@ -52,18 +50,22 @@ function Categories() {
         slidesPerView={5}
       >
         <div className="categories__content">
-          <div className="categories__left">
+          {/* <div className="categories__left">
             <img src={left} alt="" />
-          </div>
+          </div> */}
           <div className="categories__items">
             {coins.map((el) => (
-              <SwiperSlide>
+              <SwiperSlide key={el.id}>
                 <div
-                  key={el.id}
-                  className="categories__item"
+                  className={
+                    activeCategory === el.id
+                      ? `categories__item _active`
+                      : `categories__item`
+                  }
                   onClick={() => {
                     dispatch(add_coinId(el.id));
                     dispatch(add_coinDetail(el));
+                    setActiveCategory(el.id);
                   }}
                 >
                   <div className="categories__item--left">
@@ -93,9 +95,9 @@ function Categories() {
               </SwiperSlide>
             ))}
           </div>
-          <div className="categories__right">
+          {/* <div className="categories__right">
             <img src={right} alt="" />
-          </div>
+          </div> */}
         </div>
       </Swiper>
     </div>

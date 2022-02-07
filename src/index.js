@@ -5,7 +5,7 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store/index";
-// import reportWebVitals from "./reportWebVitals";
+import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -17,4 +17,4 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
-// reportWebVitals();
+reportWebVitals();
