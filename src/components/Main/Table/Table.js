@@ -44,7 +44,7 @@ function Table() {
       id: 1,
       title: "Month",
       per_month: "Per month",
-      totality: "totality",
+      totality: "Totality",
       price: "Price",
       price_device: "Price per 1 device",
       price_per_quantity: "Price per n device",
