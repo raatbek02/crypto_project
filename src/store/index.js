@@ -3,6 +3,8 @@ import coins_store from "./coins_store";
 import coin_id from "./coin_id";
 import coin_detail from "./coin_detail";
 import device_count from "./device_count";
+import products from "./products";
+import activeYearNum from "./activeYearNum";
 
 export default configureStore({
   reducer: {
@@ -10,5 +12,7 @@ export default configureStore({
     coin_id,
     coin_detail,
     device_count,
+    products,
+    activeYearNum,
   },
 });

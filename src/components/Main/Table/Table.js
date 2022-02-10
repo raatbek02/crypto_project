@@ -3,22 +3,23 @@ import axios from "axios";
 import "./Table.css";
 import { toast } from "react-toastify";
 import { $host } from "../../../http";
+import { useDispatch, useSelector } from "react-redux";
+import { addProducts } from "../../../store/products";
+import { set_activeYearNum } from "../../../store/activeYearNum";
 
 function Table() {
-  const [products, setProducts] = useState([]);
-  const [active_yearNum, setActive_yearNum] = useState(1);
+  //   const [products, setProducts] = useState([]);
+
+//   const [active_yearNum, setActive_yearNum] = useState(1);
   const [avtive_yearName, setActive_yearName] = useState("1y");
   const [active_month, setActive_month] = useState(null);
   const [sell_id, setSell_id] = useState(null);
   const [sold, setSold] = useState(null);
 
-  //   const [results_arr, setResults_arr] = useState([]);
-
-  //   console.log("sold", sold);
-  //   console.log("sell_id", sell_id);
-  //   console.log("active_month", active_month);
-  console.log("products", products);
-  //   console.log("results_arr", results_arr);
+  const dispatch = useDispatch();
+	const products = useSelector((s) => s.products.products);
+  const activeYearNum = useSelector((s) => s.activeYearNum.activeYearNum);
+	
 
   let total_sum = 0;
 
@@ -80,9 +81,9 @@ function Table() {
 
   const getProducts = () => {
     $host
-      .get(`api/table-products/?page=${active_yearNum}`)
+      .get(`api/table-products/?page=${activeYearNum}`)
       .then(({ data }) => {
-        setProducts(data);
+        dispatch(addProducts(data));
         //   console.log("getProducts", data);
       })
       .catch((e) => {
@@ -92,7 +93,7 @@ function Table() {
 
   useEffect(() => {
     getProducts();
-  }, [active_yearNum]);
+  }, [activeYearNum]);
 
   const sell_product = async () => {
     const data = {
@@ -122,9 +123,9 @@ function Table() {
         });
 
       await $host
-        .get(`api/table-products/?page=${active_yearNum}`)
+        .get(`api/table-products/?page=${activeYearNum}`)
         .then(({ data }) => {
-          setProducts(data);
+          dispatch(addProducts(data));
 
           //  console.log("getProducts", data);
         })
@@ -166,9 +167,9 @@ function Table() {
       });
 
       await $host
-        .get(`api/table-products/?page=${active_yearNum}`)
+        .get(`api/table-products/?page=${activeYearNum}`)
         .then(({ data }) => {
-          setProducts(data);
+          dispatch(addProducts(data));
           //  console.log("Prev Products", data);
         })
         .catch((e) => {
@@ -199,7 +200,7 @@ function Table() {
           <div className="table__header--years">
             <button
               onClick={() => {
-                setActive_yearNum(1);
+               dispatch(set_activeYearNum(1)) ;
                 setActive_yearName("1y");
               }}
               className={avtive_yearName === "1y" ? "active" : ""}
@@ -208,7 +209,7 @@ function Table() {
             </button>
             <button
               onClick={() => {
-                setActive_yearNum(2);
+                 dispatch(set_activeYearNum(2));
                 setActive_yearName("2y");
               }}
               className={avtive_yearName === "2y" ? "active" : ""}
@@ -217,7 +218,7 @@ function Table() {
             </button>
             <button
               onClick={() => {
-                setActive_yearNum(3);
+                 dispatch(set_activeYearNum(3));
                 setActive_yearName("3y");
               }}
               className={avtive_yearName === "3y" ? "active" : ""}
@@ -226,7 +227,7 @@ function Table() {
             </button>
             <button
               onClick={() => {
-                setActive_yearNum(4);
+                 dispatch(set_activeYearNum(4));
                 setActive_yearName("4y");
               }}
               className={avtive_yearName === "4y" ? "active" : ""}
@@ -235,7 +236,7 @@ function Table() {
             </button>
             <button
               onClick={() => {
-                setActive_yearNum(5);
+                 dispatch(set_activeYearNum(5));
                 setActive_yearName("5y");
               }}
               className={avtive_yearName === "5y" ? "active" : ""}

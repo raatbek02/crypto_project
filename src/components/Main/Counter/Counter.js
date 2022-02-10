@@ -1,7 +1,7 @@
 // import axios from "axios";
 import { $host } from "../../../http/index";
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import left from "../../../assets/images/middleContent_images/left.svg";
 import right from "../../../assets/images/middleContent_images/right.svg";
@@ -9,6 +9,7 @@ import { minusDevice, plusDevice } from "../../../store/device_count";
 
 import "./Counter.css";
 import { toast } from "react-toastify";
+import { addProducts } from "../../../store/products";
 
 function Counter() {
   const [count, setCount] = useState(1);
@@ -16,9 +17,12 @@ function Counter() {
   const [typing_price, setTyping_price] = useState("25000");
   const [price, setPrice] = useState("");
 
+  const dispatch = useDispatch();
+  const products = useSelector((s) => s.products.products);
+  const activeYearNum = useSelector((s) => s.activeYearNum.activeYearNum);
+
   const warn_price = () => toast.warn("price must be above 25000");
   console.log("price", price);
-  const dispatch = useDispatch();
   console.log("device", device);
   useEffect(() => {
     $host
@@ -56,6 +60,14 @@ function Counter() {
       .catch((e) => {
         //   console.log("Error send plus", e);
       });
+
+    await $host
+      .get(`api/table-products/?page=${activeYearNum}`)
+      .then(({ data }) => {
+        dispatch(addProducts(data));
+
+        //  console.log("getProducts", data);
+      });
   };
 
   const minus_qnt = async (id) => {
@@ -82,6 +94,14 @@ function Counter() {
       })
       .catch((e) => {
         //   console.log("Error send minus", e);
+      });
+
+    await $host
+      .get(`api/table-products/?page=${activeYearNum}`)
+      .then(({ data }) => {
+        dispatch(addProducts(data));
+
+        //  console.log("getProducts", data);
       });
   };
 
