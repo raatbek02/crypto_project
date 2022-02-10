@@ -148,9 +148,8 @@ function Counter() {
               </div>
               <div className="counter__item">
                 <p className="counter__item--left">Price</p>
-                {/* <p className="counter__item--button">{el.product.price}$</p> */}
                 <p className="counter__item--right">
-                  <p className="counter__item--right--input">
+                  {/* <p className="counter__item--right--input">
                     <input
                       type={"text"}
                       onChange={(e) => setTyping_price(e.target.value)}
@@ -158,7 +157,8 @@ function Counter() {
                       placeholder={el.product.price}
                     />
                     $
-                  </p>
+                  </p> */}
+                  {el.product.price}$
                 </p>
               </div>{" "}
               <div className="counter__item">

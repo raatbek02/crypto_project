@@ -6,7 +6,7 @@
 
 .test__content {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
@@ -18,23 +18,29 @@
   /* height: 130px; */
 }
 .test__img:hover {
-  transform: scale(1.3, 1.3);
+  transform: scale(1.5, 1.5);
 }
 .test__img:nth-child(odd) {
   padding-top: 80px;
 }
 .test__img:nth-child(2n + 1) {
-  margin-right: 35px;
+  margin-right: 25px;
 }
+/* .test__img:nth-child(4n + 2) {
+  border-radius: 50%;
+  overflow: hidden;
+} */
 
 .test__img:nth-child(3n + 3) {
-  margin-bottom: 50px;
-  margin-left: 20px;
+  margin-bottom: 70px;
+  margin-left: 15px;
   width: 140px;
   height: 140px;
+
   /* width: 150px; */
 }
 .test__img img {
   width: 100%;
   object-fit: contain;
+  /* height: 100%; */
 }
