@@ -37,6 +37,7 @@
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
+  overflow: hidden;
 }
 .categories__item._active {
   background-color: #ffc600;
