@@ -105,30 +105,30 @@ function Counter() {
       });
   };
 
-  const typingPriceHandler = async (e) => {
-    const data_2 = {
-      price: typing_price,
-    };
+//   const typingPriceHandler = async (e) => {
+//     const data_2 = {
+//       price: typing_price,
+//     };
 
-    //  setPrice(typing_price);
+//     setPrice(typing_price);
 
-    if (Number(typing_price) >= 25000 && e.key === "Enter") {
-      await $host.put(`api/device/1/`, data_2, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+//     if (Number(typing_price) >= 25000 && e.key === "Enter") {
+//       await $host.put(`api/device/1/`, data_2, {
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//       });
 
-      await $host.get(`api/device-item/`).then(({ data }) => {
-        setDevice(data);
-      });
-    } else {
-      warn_price();
-    }
-    // else if (typing_price === "" && e.key === "Enter") {
-    //       setPrice(0);
-    //     }
-  };
+//       await $host.get(`api/device-item/`).then(({ data }) => {
+//         setDevice(data);
+//       });
+//     } else {
+//       warn_price();
+//     }
+//     // else if (typing_price === "" && e.key === "Enter") {
+//     //       setPrice(0);
+//     //     }
+//   };
   return (
     <div className="counter">
       {device &&
