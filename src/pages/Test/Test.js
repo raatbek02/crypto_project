@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import img1 from "../../assets/images/test_images/1.png";
 import img2 from "../../assets/images/test_images/2.png";
@@ -18,7 +18,26 @@ import img15 from "../../assets/images/test_images/15.png";
 import img16 from "../../assets/images/test_images/16.png";
 import img17 from "../../assets/images/test_images/17.png";
 
-import "./Test.css";
+// import "./Test.css";
+
+// function Test() {
+//   const [show, setShow] = useState(false);
+
+//   useEffect(() => {
+//     if (localStorage.getItem("showModal") !== true) {
+//       localStorage.setItem("showModal", true);
+//       setShow(true);
+//     }
+//   }, []);
+
+//   if (show) {
+//     return <Component />;
+// 	}
+	
+// 	return {
+		
+// 	}
+// }
 
 function Test() {
   const images = [

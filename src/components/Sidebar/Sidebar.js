@@ -10,6 +10,8 @@ import sidebar_6 from "../../assets/images/sidebar_images/sidebar_6.png";
 import sidebar_footer_icon from "../../assets/images/sidebar_images/sidebar_footer_icon.png";
 
 import "./Sidebar.css";
+import { Link } from "react-router-dom";
+import { ADMIN, HOME } from "../../utils/consts";
 
 function Sidebar() {
   return (
@@ -21,10 +23,12 @@ function Sidebar() {
         </div>
 
         <ul>
-          <li>
-            <img src={sidebar_1} alt="" />
-            <span>Overview</span>
-          </li>
+          <Link to={HOME}>
+            <li>
+              <img src={sidebar_1} alt="" />
+              <span>Overview</span>
+            </li>
+          </Link>
           <li>
             <img src={sidebar_2} alt="" />
             <span>Portfolio</span>
@@ -41,10 +45,12 @@ function Sidebar() {
             <img src={sidebar_5} alt="" />
             <span>Reports</span>
           </li>{" "}
-          <li>
-            <img src={sidebar_6} alt="" />
-            <span>Taxes</span>
-          </li>
+          <Link to={ADMIN}>
+            <li>
+              <img src={sidebar_6} alt="" />
+              <span>Admin</span>
+            </li>
+          </Link>
         </ul>
       </div>
 

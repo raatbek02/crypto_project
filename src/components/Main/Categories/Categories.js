@@ -79,7 +79,7 @@ function Categories() {
                       <p>{el.name}</p>
                     </div>
                     <div className="categories__item--right--items">
-                      <p>{el.current_price}$</p>
+                      <p>{el.current_price.toFixed(2)}$</p>
                       {el.price_change_percentage_24h < 0 ? (
                         <p className="categories__item--right--percent red">
                           {el.price_change_percentage_24h.toFixed(2)} %

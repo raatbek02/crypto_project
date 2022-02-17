@@ -1,0 +1,61 @@
+.editing {
+  width: 300px;
+}
+.editing h3 {
+  color: #11468f;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+.editing__priceLabel {
+  margin-bottom: 10px;
+  color: #4c4c4d;
+}
+.editing__priceInput {
+  width: 100%;
+  color: #11468f;
+  /* height: 30px; */
+  border: 1px solid rgb(0, 0, 0);
+  padding: 2px;
+}
+.editing__priceInput input {
+  width: 100%;
+  height: 100%;
+  padding: 10px 5px;
+}
+.editing__priceInput input::placeholder {
+  font-size: 14px;
+}
+.editing__buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+.editing__buttons button {
+  padding: 10px 20px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+}
+.editing__buttons button:first-child {
+  background-color: rgb(73, 231, 10);
+}
+.editing__buttons button:first-child:hover {
+  background-color: rgb(44, 155, 0);
+}
+.editing__buttons button:first-child:active {
+  background-color: rgb(72, 255, 0);
+}
+
+.editing__buttons button:last-child {
+  background-color: rgb(207, 8, 1);
+  color: #fff;
+}
+.editing__buttons button:last-child:hover {
+  background-color: rgb(139, 5, 0);
+}
+.editing__buttons button:last-child:active {
+  background-color: rgb(255, 8, 0);
+}
