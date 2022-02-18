@@ -249,7 +249,7 @@ function Table() {
           <div className="table__header--years--mobile">
             <FormControl
               sx={{ m: 1, minWidth: 40 }}
-              style={{ color: "1d2746" }}
+              style={{ color: "#1d2746" }}
             >
               <InputLabel id="demo-simple-select-autowidth-label">
                 Year

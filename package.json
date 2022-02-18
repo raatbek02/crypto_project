@@ -16,6 +16,7 @@
     "chart.js": "^2.9.4",
     "chartjs-plugin-zoom": "^0.7.7",
     "dotenv": "^16.0.0",
+    "material-ui-colors": "^1.0.0",
     "react": "^17.0.2",
     "react-chartjs-2": "^2.10.0",
     "react-dom": "^17.0.2",

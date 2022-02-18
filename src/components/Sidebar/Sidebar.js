@@ -43,36 +43,36 @@ function Sidebar() {
           <span>CriptoCurrency</span>
         </div> */}
 
-        <ul>
+        <div className="sidebar__list">
           <Link to={HOME}>
-            <li>
+            <button>
               <img src={sidebar_1} alt="" />
               <span>Overview</span>
-            </li>
+            </button>
           </Link>
-          <li>
+          <button>
             <img src={sidebar_2} alt="" />
             <span>Portfolio</span>
-          </li>{" "}
-          <li>
+          </button>{" "}
+          <button>
             <img src={sidebar_3} alt="" />
             <span>Watchlist</span>
-          </li>{" "}
-          <li>
+          </button>{" "}
+          <button>
             <img src={sidebar_4} alt="" />
             <span>Orders</span>
-          </li>
-          <li>
+          </button>
+          <button>
             <img src={sidebar_5} alt="" />
             <span>Reports</span>
-          </li>{" "}
+          </button>{" "}
           <Link to={ADMIN}>
-            <li>
+            <button onClick={() => dispatch(setActiveBurger(false))}>
               <img src={sidebar_6} alt="" />
               <span>Admin</span>
-            </li>
+            </button>
           </Link>
-        </ul>
+        </div>
       </div>
 
       <div className="sidebar__footer">

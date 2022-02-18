@@ -1,22 +1,24 @@
 .admin {
   font-family: "Inter", sans-serif;
+  /* height: 100vh; */
 }
 .admin__container {
   padding: 30px;
 }
-.admin h2 {
+
+.admin__header h2 {
   color: #11468f;
+  /* color: #95afd3; */
+
   font-weight: 600;
   font-size: 24px;
   text-align: center;
   margin-bottom: 30px;
 }
 .admin__selectYear {
-  /* width: 200px;
-  margin: 0 auto; */
 }
 .admin__content {
-  width: 80%;
+  width: 60%;
   height: 450px;
   overflow-y: scroll;
   padding: 30px 50px;
@@ -24,6 +26,48 @@
   border-radius: 10px;
   box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.05);
   margin: 0 auto;
+}
+
+.admin__contentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgb(161, 161, 161);
+}
+
+.admin__productName {
+  color: #ffc400;
+  font-weight: 700;
+  font-size: 20px;
+  margin-right: 50px;
+  display: flex;
+  align-items: center;
+}
+.admin__productName img {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-right: 3px;
+}
+
+.admin__deviceChanger button {
+  padding: 9px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 8px;
+
+  background-color: #ffc600;
+  color: #11468f;
+  transition: all 0.3s ease-in-out;
+}
+
+.admin__deviceChanger button:hover {
+  background-color: #d6a800;
+}
+
+.admin__deviceChanger button:active {
+  background-color: #fad75b;
 }
 
 .admin__item.first {
@@ -70,6 +114,11 @@
   background-color: #378aff;
 }
 
+.MuiFormControl-root {
+  padding: 0;
+  margin: 0;
+}
+
 .admin__content::-webkit-scrollbar {
   width: 3px;
   background-color: rgb(255, 255, 255);
@@ -83,4 +132,125 @@
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
   /* border-radius: 10px; */
   background-color: #f9f9fd;
+}
+
+/* **************************** MEDIA QUERY *********************************************** */
+
+/* --------------------------------------@media (max-width: 992px)-------------------------- */
+
+.header__burger {
+  display: none;
+}
+@media (max-width: 992px) {
+  .admin__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  .admin__header h2 {
+    margin-bottom: 0;
+    margin-left: 40%;
+  }
+  .header__burger {
+    display: block;
+
+    z-index: 5;
+    position: relative;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+    display: block;
+  }
+
+  .header__burger span,
+  .header__burger::before,
+  .header__burger::after {
+    left: 0;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    transition: all 0.3s linear;
+    background-color: #11468f;
+    border-radius: 3px;
+  }
+  /* .header__burger::after {
+    height: 1px;
+  } */
+  .header__burger::before,
+  .header__burger::after {
+    content: "";
+  }
+  .header__burger::before {
+    top: 0;
+  }
+  .header__burger::after {
+    bottom: 0;
+  }
+  .header__burger span {
+    top: 50%;
+    transform: scale(1) translate(0px, -50%);
+  }
+  .header__burger._active span {
+    transform: scale(0) translate(0px, -50%);
+  }
+  .header__burger._active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0px, -50%);
+  }
+  .header__burger._active::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0px, 50%);
+  }
+
+  /* --------------------------------------------------------------- */
+
+  .admin__content {
+    width: 70%;
+  }
+}
+
+/* --------------------------------------@media (max-width: 768px)-------------------------- */
+
+@media (max-width: 768px) {
+  .admin__content {
+    width: 90%;
+  }
+}
+
+/* --------------------------------------@media (max-width: 575px)-------------------------- */
+
+.admin__selectYear.mobile {
+  display: none;
+}
+
+@media (max-width: 575px) {
+  .admin__selectYear.dekstop {
+    display: none;
+  }
+  .admin__selectYear.mobile {
+    display: block;
+  }
+  .admin__container {
+    padding: 20px;
+  }
+  .admin__content {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .admin__productName {
+    margin-right: 0;
+    font-size: 14px;
+  }
+  .admin__productName img {
+    width: 10px;
+    height: 10px;
+  }
+  .admin__deviceChanger button {
+    padding: 8px 15px;
+  }
+
+  .admin__months {
+    font-size: 10px;
+  }
 }

@@ -1,47 +1,37 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { $host } from "../../../http";
-import { addProducts } from "../../../store/products";
-import "./Editing.css";
 
-function Editing({ activeProduct, handleActiveEdit, activeYear }) {
+function DeviceEdit({ handleActiveEdit }) {
   const [newPrice, setNewPrice] = useState("");
 
-  const success_ubdate = () =>
-    toast.success("Price per bitcoin successfully ubdated");
+  const success_change = () =>
+    toast.success("Price per device successfully chanched");
 
-  const dispatch = useDispatch();
-  const ubdatePrice = () => {
+  const changeDevicePrice = () => {
     const data = {
       price: newPrice,
     };
 
     if (newPrice) {
       $host
-        .put(`api/productprice-update/${activeProduct.id}/`, data, {
+        .put(`api/device/1/`, data, {
           headers: {
             "Content-Type": "application/json",
           },
         })
-        .then((res) => {
-          $host
-            .get(`api/table-products/?page=${activeYear}`)
-            .then(({ data }) => {
-              dispatch(addProducts(data));
-              //   console.log("getProducts", data);
-            });
-
-          success_ubdate();
+        .then(() => {
+          success_change();
         });
     }
   };
+
   return (
     <div className="editing">
-      <h3>Editing</h3>
+      <h3>Edit device</h3>
 
       <div className="editing__content">
-        <p className="editing__priceLabel">Price per bitcoin ($)</p>
+        <p className="editing__priceLabel">Price per device ($)</p>
         <div className="editing__priceInput">
           <input
             type="text"
@@ -53,7 +43,7 @@ function Editing({ activeProduct, handleActiveEdit, activeYear }) {
         <div className="editing__buttons">
           <button
             onClick={() => {
-              ubdatePrice();
+              changeDevicePrice();
               setNewPrice("");
               handleActiveEdit(false);
             }}
@@ -67,4 +57,4 @@ function Editing({ activeProduct, handleActiveEdit, activeYear }) {
   );
 }
 
-export default Editing;
+export default DeviceEdit;
