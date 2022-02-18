@@ -65,6 +65,6 @@
 /* ----------------------------------------------@media (max-width: 450px)--------------------- */
 @media (max-width: 450px) {
   .middleContent .counter {
-    width: 100%;
+    width: 80%;
   }
 }

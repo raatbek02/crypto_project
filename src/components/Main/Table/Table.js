@@ -39,7 +39,7 @@ function Table() {
   const success_cancel = () => toast.success(" Sale canceled");
   const warning_sell = () => toast.warn("To sell, select a month");
   const warning_cancel = () =>
-    toast.warn("To sell, select the sold product of the month");
+    toast.warn("To cancel, select the sold product of the month");
 
   const column_arr = [
     {
