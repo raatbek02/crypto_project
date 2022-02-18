@@ -19,3 +19,15 @@
   font-weight: 600;
   font-size: 14px;
 }
+.statistics__content {
+  width: 100%;
+  height: 250px;
+}
+
+/* **************************** MEDIA QUERY *********************************************** */
+
+@media (max-width: 1200px) {
+  .statistics__content {
+    height: 200px;
+  }
+}

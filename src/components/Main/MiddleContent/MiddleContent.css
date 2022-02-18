@@ -6,3 +6,11 @@
   display: flex;
   justify-content: space-between;
 }
+
+/* **************************** MEDIA QUERY *********************************************** */
+
+@media (max-width: 1200px) {
+  .middleContent .statistics {
+    width: 67%;
+  }
+}

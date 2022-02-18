@@ -17,9 +17,9 @@ function Statistics() {
 
   const bitcoin_data = coins[0];
   localStorage.setItem("bitcoin_data", JSON.stringify(bitcoin_data));
-//   console.log("bitcoin_data", bitcoin_data);
-//   console.log("coin_detail", coin_detail);
-//   console.log("coin_id", coin_id);
+  //   console.log("bitcoin_data", bitcoin_data);
+  //   console.log("coin_detail", coin_detail);
+  //   console.log("coin_id", coin_id);
 
   const determineTimeFormat = () => {
     switch (timeFormat) {
@@ -163,10 +163,7 @@ function Statistics() {
           </div>
         </div>
       </div>
-      <div
-        className="statistics__content"
-        style={{ width: "100%", height: "250px" }}
-      >
+      <div className="statistics__content">
         <Line
           data={chart_data}
           options={{

@@ -144,3 +144,46 @@
   color: #12f64b;
   background-color: #1d2746;
 }
+
+/* **************************** MEDIA QUERY *********************************************** */
+
+/* --------------------------------------max-width: 1200px-------------------------- */
+@media (max-width: 1200px) {
+  .table {
+    padding: 20px 10px;
+  }
+  .table__header--buttons button {
+    padding: 8px 30px;
+    font-size: 10px;
+  }
+  .table__header--middle span {
+    font-size: 14px;
+  }
+  .table__header--years button {
+    padding: 6px 9px;
+    font-size: 10px;
+  }
+  .table__header--years button.active {
+    padding: 6px 9px;
+    font-size: 10px;
+  }
+  /* ////////////////// */
+
+  .table_title button {
+    padding: 6px 7px;
+    font-size: 10px;
+  }
+  .table__item .table_title.first {
+    padding: 6px 7px;
+    font-size: 10px;
+  }
+  .table__item {
+    font-size: 10px;
+  }
+}
+
+/* --------------------------------------max-width: 992px-------------------------- */
+
+@media (max-width: 992px) {
+	
+}

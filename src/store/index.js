@@ -5,6 +5,7 @@ import coin_detail from "./coin_detail";
 import device_count from "./device_count";
 import products from "./products";
 import activeYearNum from "./activeYearNum";
+import activeBurger from "./activeBurger";
 
 export default configureStore({
   reducer: {
@@ -14,5 +15,6 @@ export default configureStore({
     device_count,
     products,
     activeYearNum,
+    activeBurger,
   },
 });

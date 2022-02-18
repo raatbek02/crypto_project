@@ -76,3 +76,18 @@ input[type="text"] {
   font-weight: 500;
   font-family: "Inter", sans-serif;
 }
+
+/* **************************** MEDIA QUERY *********************************************** */
+
+@media (max-width: 1200px) {
+  .counter {
+    padding: 10px;
+    font-size: 10px;
+  }
+  .counter__title {
+    font-size: 14px;
+  }
+  .counter__item {
+    font-size: 12px;
+  }
+}

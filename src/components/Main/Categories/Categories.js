@@ -47,7 +47,20 @@ function Categories() {
         loop={true}
         speed={900}
         spaceBetween={0}
-        slidesPerView={5}
+        breakpoints={{
+          1250: {
+            slidesPerView: 5,
+          },
+          992: {
+            slidesPerView: 4,
+          },
+          768: {
+            slidesPerView: 3,
+          },
+          575: {
+            slidesPerView: 2,
+          },
+        }}
       >
         <div className="categories__content">
           {/* <div className="categories__left">

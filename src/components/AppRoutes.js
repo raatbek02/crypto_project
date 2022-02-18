@@ -4,7 +4,7 @@ import { publicRoutes } from "../routes";
 
 function AppRoutes() {
   return (
-    <div style={{ width: "84%" }}>
+    <div>
       <Routes primary={false}>
         {publicRoutes.map(({ path, Component }) => (
           <Route primary={false} key={path} path={path} element={Component} />
