@@ -45,7 +45,7 @@ function Sidebar() {
 
         <div className="sidebar__list">
           <Link to={HOME}>
-            <button>
+            <button onClick={() => dispatch(setActiveBurger(false))}>
               <img src={sidebar_1} alt="" />
               <span>Overview</span>
             </button>

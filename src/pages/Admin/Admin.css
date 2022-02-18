@@ -1,5 +1,6 @@
 .admin {
   font-family: "Inter", sans-serif;
+  margin-bottom: 100px;
   /* height: 100vh; */
 }
 .admin__container {
@@ -119,21 +120,6 @@
   margin: 0;
 }
 
-.admin__content::-webkit-scrollbar {
-  width: 3px;
-  background-color: rgb(255, 255, 255);
-}
-.admin__content::-webkit-scrollbar-thumb {
-  width: 3px;
-  /* border-radius: 5px; */
-  background: #11468f;
-}
-.admin__content::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
-  /* border-radius: 10px; */
-  background-color: #f9f9fd;
-}
-
 /* **************************** MEDIA QUERY *********************************************** */
 
 /* --------------------------------------@media (max-width: 992px)-------------------------- */
@@ -224,6 +210,9 @@
 }
 
 @media (max-width: 575px) {
+  .admin__header h2 {
+    margin-left: 30%;
+  }
   .admin__selectYear.dekstop {
     display: none;
   }
@@ -243,8 +232,8 @@
     font-size: 14px;
   }
   .admin__productName img {
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
   }
   .admin__deviceChanger button {
     padding: 8px 15px;
@@ -253,4 +242,22 @@
   .admin__months {
     font-size: 10px;
   }
+}
+
+.admin__content::-webkit-scrollbar {
+  width: 3px;
+  height: 0;
+  background-color: rgb(255, 255, 255);
+}
+.admin__content::-webkit-scrollbar-thumb {
+  width: 3px;
+  height: 0;
+  /* border-radius: 5px; */
+  background: #11468f;
+}
+.admin__content::-webkit-scrollbar-track {
+  height: 0;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  /* border-radius: 10px; */
+  background-color: #f9f9fd;
 }
