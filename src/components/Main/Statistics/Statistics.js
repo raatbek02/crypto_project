@@ -172,6 +172,11 @@ function Statistics() {
             legend: {
               display: false,
             },
+            elements: {
+              point: {
+                radius: 0,
+              },
+            },
             scales: {
               yAxes: [
                 {
