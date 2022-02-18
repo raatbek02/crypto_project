@@ -6,9 +6,14 @@ import "./MiddleContent.css";
 function MiddleContent() {
   return (
     <div className="middleContent">
-      <div className="middleContent__content">
+      <div className="middleContent__content desktop">
         <Counter />
         <Statistics />
+      </div>
+
+      <div className="middleContent__content mobile">
+        <Statistics />
+        <Counter />
       </div>
     </div>
   );

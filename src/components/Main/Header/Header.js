@@ -41,6 +41,10 @@ function Header() {
             </li> */}
           </ul>
         </div>
+
+        <div className="header__assets--mobile">
+          <img src={search} alt="" />
+        </div>
       </div>
     </div>
   );

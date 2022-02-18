@@ -78,7 +78,7 @@ input[type="text"] {
 }
 
 /* **************************** MEDIA QUERY *********************************************** */
-
+/* -------------------------------------@media (max-width: 1200px)----------------------------- */
 @media (max-width: 1200px) {
   .counter {
     padding: 10px;
@@ -90,4 +90,24 @@ input[type="text"] {
   .counter__item {
     font-size: 12px;
   }
+}
+
+/* -------------------------------------@media (max-width: 768px)----------------------------- */
+@media (max-width: 768px) {
+}
+
+/* -------------------------------------@media (max-width: 575px)----------------------------- */
+@media (max-width: 575px) {
+  .counter__title {
+    margin: 15px 0;
+  }
+  .counter__item {
+    font-size: 10px;
+    padding: 10px 0;
+  }
+}
+
+/* -------------------------------------@media (max-width: 450px)----------------------------- */
+@media (max-width: 450px) {
+	
 }

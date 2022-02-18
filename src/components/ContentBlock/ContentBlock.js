@@ -5,7 +5,7 @@ import AppRoutes from "../AppRoutes";
 function ContentBlock() {
   return (
     <div className="contentBlock">
-      <AppRoutes />;
+      <AppRoutes />
     </div>
   );
 }

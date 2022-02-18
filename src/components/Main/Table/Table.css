@@ -74,6 +74,7 @@
 /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
 .table__content {
+  width: 100%;
   font-size: 12px;
   color: #030d2e;
   font-weight: 500;
@@ -145,6 +146,10 @@
   background-color: #1d2746;
 }
 
+.table__header--years--mobile {
+  display: none;
+}
+
 /* **************************** MEDIA QUERY *********************************************** */
 
 /* --------------------------------------max-width: 1200px-------------------------- */
@@ -185,5 +190,89 @@
 /* --------------------------------------max-width: 992px-------------------------- */
 
 @media (max-width: 992px) {
-	
+}
+
+/* --------------------------------------max-width: 768px-------------------------- */
+
+@media (max-width: 768px) {
+  .table__content {
+    overflow-x: scroll;
+  }
+  .table__item:first-child .table__column .table__cell {
+    white-space: nowrap;
+  }
+  .table_title button {
+    white-space: nowrap;
+  }
+
+  .table__header--years {
+    display: none;
+  }
+  .table__header--years--mobile {
+    display: block;
+  }
+  .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+    font-size: 12px;
+  }
+  .MuiList-root {
+    font-size: 12px;
+  }
+  /* .menuItem {
+    font-size: 12px;
+  } */
+}
+
+/* --------------------------------------max-width: 575px-------------------------- */
+
+.table__mobileTotal {
+  display: none;
+}
+@media (max-width: 575px) {
+  .table__header--middle {
+    display: none;
+  }
+  .table__mobileTotal {
+    display: block;
+    margin-bottom: 15px;
+
+    font-size: 12px;
+    color: #030d2e;
+    font-weight: 600;
+  }
+
+  .table {
+    padding: 10px 5px;
+  }
+  .table__header {
+    margin-bottom: 0;
+  }
+  .table__header--buttons button {
+    padding: 8px 30px;
+    font-size: 10px;
+  }
+  .table__header--middle span {
+    font-size: 12px;
+  }
+
+  .table_title {
+    margin-bottom: 15px;
+  }
+}
+
+/* ********************************** */
+
+.table__content::-webkit-scrollbar {
+  /* width: 2px; */
+  height: 0px;
+}
+
+.table__content::-webkit-scrollbar-track {
+  background: #dddbdb;
+  /* width: 2px; */
+  height: 0px;
+}
+
+.table__content::-webkit-scrollbar-thumb {
+  /* width: 2px; */
+  height: 0px;
 }

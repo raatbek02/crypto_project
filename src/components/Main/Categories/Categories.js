@@ -55,9 +55,15 @@ function Categories() {
             slidesPerView: 4,
           },
           768: {
-            slidesPerView: 3,
+            slidesPerView: 4,
           },
           575: {
+            slidesPerView: 4,
+          },
+          430: {
+            slidesPerView: 3,
+          },
+          320: {
             slidesPerView: 2,
           },
         }}

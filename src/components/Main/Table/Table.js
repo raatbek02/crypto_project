@@ -7,19 +7,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { addProducts } from "../../../store/products";
 import { set_activeYearNum } from "../../../store/activeYearNum";
 
+import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+
 function Table() {
   //   const [products, setProducts] = useState([]);
 
-//   const [active_yearNum, setActive_yearNum] = useState(1);
+  //   const [active_yearNum, setActive_yearNum] = useState(1);
   const [avtive_yearName, setActive_yearName] = useState("1y");
   const [active_month, setActive_month] = useState(null);
   const [sell_id, setSell_id] = useState(null);
   const [sold, setSold] = useState(null);
 
   const dispatch = useDispatch();
-	const products = useSelector((s) => s.products.products);
+  const products = useSelector((s) => s.products.products);
   const activeYearNum = useSelector((s) => s.activeYearNum.activeYearNum);
-	
 
   let total_sum = 0;
 
@@ -189,7 +190,7 @@ function Table() {
               <button onClick={() => sell_product()}>SELL</button>
             </div>
             <div className="table__header--btn_notSell">
-              <button onClick={() => notSell_product()}>CANCEL SELL</button>
+              <button onClick={() => notSell_product()}>CANCEL</button>
             </div>
           </div>
         </div>
@@ -200,7 +201,7 @@ function Table() {
           <div className="table__header--years">
             <button
               onClick={() => {
-               dispatch(set_activeYearNum(1)) ;
+                dispatch(set_activeYearNum(1));
                 setActive_yearName("1y");
               }}
               className={avtive_yearName === "1y" ? "active" : ""}
@@ -209,7 +210,7 @@ function Table() {
             </button>
             <button
               onClick={() => {
-                 dispatch(set_activeYearNum(2));
+                dispatch(set_activeYearNum(2));
                 setActive_yearName("2y");
               }}
               className={avtive_yearName === "2y" ? "active" : ""}
@@ -218,7 +219,7 @@ function Table() {
             </button>
             <button
               onClick={() => {
-                 dispatch(set_activeYearNum(3));
+                dispatch(set_activeYearNum(3));
                 setActive_yearName("3y");
               }}
               className={avtive_yearName === "3y" ? "active" : ""}
@@ -227,7 +228,7 @@ function Table() {
             </button>
             <button
               onClick={() => {
-                 dispatch(set_activeYearNum(4));
+                dispatch(set_activeYearNum(4));
                 setActive_yearName("4y");
               }}
               className={avtive_yearName === "4y" ? "active" : ""}
@@ -236,7 +237,7 @@ function Table() {
             </button>
             <button
               onClick={() => {
-                 dispatch(set_activeYearNum(5));
+                dispatch(set_activeYearNum(5));
                 setActive_yearName("5y");
               }}
               className={avtive_yearName === "5y" ? "active" : ""}
@@ -244,7 +245,76 @@ function Table() {
               5Y
             </button>
           </div>
+
+          <div className="table__header--years--mobile">
+            <FormControl
+              sx={{ m: 1, minWidth: 40 }}
+              style={{ color: "1d2746" }}
+            >
+              <InputLabel id="demo-simple-select-autowidth-label">
+                Year
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-autowidth-label"
+                id="demo-simple-select"
+                value={avtive_yearName}
+                label="Year"
+                onChange={(e) => setActive_yearName(e.target.value)}
+                style={{ fontSize: "12px", color: "#1d2746" }}
+              >
+                <MenuItem
+                  style={{ fontSize: "12px" }}
+                  onClick={() => {
+                    dispatch(set_activeYearNum(1));
+                  }}
+                  value={"1y"}
+                >
+                  1Y
+                </MenuItem>
+                <MenuItem
+                  style={{ fontSize: "12px" }}
+                  onClick={() => {
+                    dispatch(set_activeYearNum(2));
+                  }}
+                  value={"2y"}
+                >
+                  2Y
+                </MenuItem>
+                <MenuItem
+                  style={{ fontSize: "12px" }}
+                  onClick={() => {
+                    dispatch(set_activeYearNum(3));
+                  }}
+                  value={"3y"}
+                >
+                  3Y
+                </MenuItem>
+                <MenuItem
+                  style={{ fontSize: "12px" }}
+                  onClick={() => {
+                    dispatch(set_activeYearNum(4));
+                  }}
+                  value={"4y"}
+                >
+                  4Y
+                </MenuItem>
+                <MenuItem
+                  style={{ fontSize: "12px" }}
+                  onClick={() => {
+                    dispatch(set_activeYearNum(5));
+                  }}
+                  value={"5y"}
+                >
+                  5Y
+                </MenuItem>
+              </Select>
+            </FormControl>
+          </div>
         </div>
+      </div>
+
+      <div className="table__mobileTotal">
+        <span>Total: {total_sum}$</span>
       </div>
 
       <div className="table__content">
