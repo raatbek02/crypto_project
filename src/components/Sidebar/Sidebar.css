@@ -50,16 +50,34 @@
   margin-right: 10px;
 }
 
+.sidebar__footer ul {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding-left: 15%;
+}
+.sidebar__footer ul li:first-child {
+  font-size: 20px;
+  font-weight: 700;
+}
+.sidebar__footer ul li {
+  margin-bottom: 20px;
+}
 .sidebar__footer p {
   display: flex;
   justify-content: center;
   color: #fff;
-  font-size: 14px;
+  font-size: 10px;
   margin-bottom: 30px;
+  margin-top: 30px;
 }
 .sidebar__footer--img {
   display: flex;
   justify-content: center;
+}
+
+.sidebar .sidebar__mobileLogin {
+  display: none;
 }
 
 /* **************************** MEDIA QUERY *********************************************** */
@@ -96,7 +114,9 @@
     margin-left: 15px;
     font-size: 14px;
   }
-
+  .sidebar__mobileLogin {
+    display: block;
+  }
   .header__burger--sidebar {
     /* display: none; */
 

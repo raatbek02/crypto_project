@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 
-import "./Admin.css";
 import { useSelector, useDispatch } from "react-redux";
 import { addProducts } from "../../store/products";
 import { $host } from "../../http";
@@ -12,16 +11,25 @@ import Editing from "./Editing/Editing";
 import DeviceEdit from "./DeviceEdit/DeviceEdit";
 import { setActiveBurger } from "../../store/activeBurger";
 
+import profile from "../../assets/images/header_images/profile.svg";
+import "./Admin.css";
+import { useNavigate } from "react-router-dom";
+import { HOME } from "../../utils/consts";
+import { setIsAuth } from "../../store/isAuth";
+
 function Admin() {
   const [activeYear, setActiveYear] = useState(1);
   //   const [products, setProducts] = useState([]);
   const [activeEdit, setActiveEdit] = useState(false);
   const [activeDeviceEdit, setActiveDeviceEdit] = useState(false);
+  const [activeLogout, setActiveLogout] = useState(false);
   const [activeProduct, setActiveProduct] = useState({});
 
   const dispatch = useDispatch();
   const products = useSelector((s) => s.products.products);
   const activeBurger = useSelector((s) => s.activeBurger.activeBurger);
+
+  const navigate = useNavigate();
 
   const handleActiveEdit = (active) => {
     setActiveEdit(active);
@@ -43,6 +51,12 @@ function Admin() {
     getProducts();
   }, [activeYear]);
 
+  const logout = () => {
+    localStorage.setItem("isAuthLocal", false);
+    dispatch(setIsAuth(false));
+    navigate(HOME);
+  };
+
   return (
     <div className="admin">
       <div className="admin__container">
@@ -56,6 +70,12 @@ function Admin() {
             <span></span>
           </div>
           <h2>ADMIN</h2>
+
+          <div onClick={() => logout()} className="admin__logout">
+            <img src={profile} alt="" />
+
+            <span>Logout</span>
+          </div>
         </div>
 
         <div className="admin__content">
@@ -156,6 +176,10 @@ function Admin() {
 
       <Modal active={activeDeviceEdit} setActive={setActiveDeviceEdit}>
         <DeviceEdit handleActiveEdit={handleActiveEdit} />
+      </Modal>
+
+      <Modal active={activeLogout} setActive={setActiveLogout}>
+        Hello logout
       </Modal>
     </div>
   );

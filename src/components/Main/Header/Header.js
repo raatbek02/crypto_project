@@ -1,16 +1,20 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { setActiveBurger } from "../../../store/activeBurger";
+import Modal from "../../UI/Modal/Modal";
+import AuthContent from "../../Auth/AuthContent/AuthContent";
 
 import search from "../../../assets/images/header_images/search.svg";
 import notification from "../../../assets/images/header_images/notification.svg";
 import info from "../../../assets/images/header_images/info.svg";
+import profile from "../../../assets/images/header_images/profile.svg";
 
 import "./Header.css";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { setActiveBurger } from "../../../store/activeBurger";
 
 function Header() {
   //   const [activeBurger, setActiveBurger] = useState(false);
+  const [modalAuth, setModalAuth] = useState(false);
   const activeBurger = useSelector((s) => s.activeBurger.activeBurger);
   const dispatch = useDispatch();
   return (
@@ -36,16 +40,20 @@ function Header() {
             <li>
               <img src={info} alt="" />
             </li>{" "}
-            {/* <li>
-              <img src={null} alt="" />
-            </li> */}
+            <li onClick={() => setModalAuth(true)}>
+              <img src={profile} alt="" />
+            </li>
           </ul>
         </div>
 
         <div className="header__assets--mobile">
-          <img src={search} alt="" />
+          <img onClick={() => setModalAuth(true)} src={profile} alt="" />
         </div>
       </div>
+
+      <Modal active={modalAuth} setActive={setModalAuth}>
+        <AuthContent />
+      </Modal>
     </div>
   );
 }

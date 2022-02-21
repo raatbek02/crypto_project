@@ -6,6 +6,7 @@ import device_count from "./device_count";
 import products from "./products";
 import activeYearNum from "./activeYearNum";
 import activeBurger from "./activeBurger";
+import isAuth from "./isAuth";
 
 export default configureStore({
   reducer: {
@@ -16,5 +17,6 @@ export default configureStore({
     products,
     activeYearNum,
     activeBurger,
+    isAuth,
   },
 });

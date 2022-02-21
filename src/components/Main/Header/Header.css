@@ -92,6 +92,10 @@
     bottom: 50%;
     transform: rotate(45deg) translate(0px, 50%);
   }
+
+  .admin__header h2 {
+    margin-left: unset;
+  }
 }
 
 /* --------------------------------------@media (max-width: 1200px)-------------------------- */

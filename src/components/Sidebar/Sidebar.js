@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import sidebar_title from "../../assets/images/sidebar_images/sidebar_title.png";
 import sidebar_1 from "../../assets/images/sidebar_images/sidebar_1.png";
@@ -9,13 +9,19 @@ import sidebar_5 from "../../assets/images/sidebar_images/sidebar_5.png";
 import sidebar_6 from "../../assets/images/sidebar_images/sidebar_6.png";
 import sidebar_footer_icon from "../../assets/images/sidebar_images/sidebar_footer_icon.png";
 
+import profile_white from "../../assets/images/header_images/profile_white.svg";
+
 import "./Sidebar.css";
 import { Link } from "react-router-dom";
 import { ADMIN, HOME } from "../../utils/consts";
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveBurger } from "../../store/activeBurger";
+import Modal from "../UI/Modal/Modal";
+import AuthContent from "../Auth/AuthContent/AuthContent";
 
 function Sidebar() {
+  const [modalAuth, setModalAuth] = useState(false);
+
   const activeBurger = useSelector((s) => s.activeBurger.activeBurger);
   const dispatch = useDispatch();
   return (
@@ -66,20 +72,38 @@ function Sidebar() {
             <img src={sidebar_5} alt="" />
             <span>Reports</span>
           </button>{" "}
-          <Link to={ADMIN}>
+          {/* <button
+            className="sidebar__mobileLogin"
+            onClick={() => setModalAuth(true)}
+          >
+            <img src={profile_white} alt="" />
+            <span>Login</span>
+          </button>{" "} */}
+          {/* <Link to={ADMIN}>
             <button onClick={() => dispatch(setActiveBurger(false))}>
               <img src={sidebar_6} alt="" />
               <span>Admin</span>
             </button>
-          </Link>
+          </Link> */}
         </div>
+
+        <Modal active={modalAuth} setActive={setModalAuth}>
+          <AuthContent />
+        </Modal>
       </div>
 
       <div className="sidebar__footer">
-        <div className="sidebar__footer--img">
+        {/* <div className="sidebar__footer--img">
           <img src={sidebar_footer_icon} alt="" />
-        </div>
-        <p>Support</p>
+        </div> */}
+        <ul>
+          <li>About us</li>
+          <li>Methodology</li>
+          <li>Careers</li>
+          <li>Branding Guide</li>
+          <li>Advertising</li>
+        </ul>
+        <p>Copyright &copy; 2022</p>
       </div>
     </div>
   );

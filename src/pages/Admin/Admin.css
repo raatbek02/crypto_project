@@ -7,6 +7,11 @@
   padding: 30px;
 }
 
+.admin__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
 .admin__header h2 {
   color: #11468f;
   /* color: #95afd3; */
@@ -14,7 +19,23 @@
   font-weight: 600;
   font-size: 24px;
   text-align: center;
-  margin-bottom: 30px;
+  align-self: center;
+  margin-left: 45%;
+}
+.admin__logout {
+  margin-right: 20%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.admin__logout span {
+  color: #11468f;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+.admin__logout span:hover {
+  color: #002861;
 }
 .admin__selectYear {
 }
@@ -135,7 +156,10 @@
   }
   .admin__header h2 {
     margin-bottom: 0;
-    margin-left: 40%;
+    margin-left: unset;
+  }
+  .admin__logout {
+    margin-right: unset;
   }
   .header__burger {
     display: block;
@@ -211,7 +235,8 @@
 
 @media (max-width: 575px) {
   .admin__header h2 {
-    margin-left: 30%;
+    /* margin-left: 30%; */
+    font-size: 18px;
   }
   .admin__selectYear.dekstop {
     display: none;
