@@ -9,7 +9,7 @@ import sidebar_5 from "../../assets/images/sidebar_images/sidebar_5.png";
 import sidebar_6 from "../../assets/images/sidebar_images/sidebar_6.png";
 import sidebar_footer_icon from "../../assets/images/sidebar_images/sidebar_footer_icon.png";
 
-import profile_white from "../../assets/images/header_images/profile_white.svg";
+// import profile_white from "../../assets/images/header_images/profile_white.svg";
 
 import "./Sidebar.css";
 import { Link } from "react-router-dom";
@@ -20,7 +20,7 @@ import Modal from "../UI/Modal/Modal";
 import AuthContent from "../Auth/AuthContent/AuthContent";
 
 function Sidebar() {
-  const [modalAuth, setModalAuth] = useState(false);
+//   const [modalAuth, setModalAuth] = useState(false);
 
   const activeBurger = useSelector((s) => s.activeBurger.activeBurger);
   const dispatch = useDispatch();
@@ -87,9 +87,9 @@ function Sidebar() {
           </Link> */}
         </div>
 
-        <Modal active={modalAuth} setActive={setModalAuth}>
+        {/* <Modal active={modalAuth} setActive={setModalAuth}>
           <AuthContent />
-        </Modal>
+        </Modal> */}
       </div>
 
       <div className="sidebar__footer">
