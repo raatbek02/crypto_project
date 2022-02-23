@@ -1,19 +1,19 @@
 import { $host } from ".";
 
-export const registration = async (username, email, password) => {
-  const { data } = await $host.post("api/auth/register", {
+export const registration = async (email, username, password) => {
+  const { data } = await $host.post("api/auth/users/", {
     username,
     email,
     password,
-    role: "ADMIN",
+   //  role: "ADMIN",
   });
 
   localStorage.setItem("token", JSON.stringify(data.token));
   return data.token;
 };
 
-export const login = async (username, password) => {
-  const { data } = await $host.post("api/auth/login", {
+export const login = async (password, username) => {
+  const { data } = await $host.post("api/auth/token/login/", {
     username,
     password,
   });

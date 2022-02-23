@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { $host } from "../../../http";
+import { login, registration } from "../../../http/userApi";
 import { setIsAuth } from "../../../store/isAuth";
 import { ADMIN } from "../../../utils/consts";
 
@@ -17,15 +19,49 @@ function AuthContent() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const signUp = async () => {};
+  const signUp = async () => {
+    const data = {
+      email: email,
+      username: userName,
+      password: password,
+    };
+    await $host.post(`api/auth/users/`, data).then((res) => {
+      console.log("success registr", res);
+      // console.log(data.token);
+    });
+    //  try {
+    //    let data = await registration(email, userName, password);
+    //    setUserName("");
+    //    setEmail("");
+    //    setPassword("");
+
+    //    console.log("registration data", data);
+    //  } catch {}
+  };
 
   const signIn = async () => {
-    if (userName === "ADMIN" && password === "12345678") {
+    const data = {
+      username: userName,
+      password: password,
+    };
+
+    //  try {
+    //    const data = await login(password, userName);
+
+    //    console.log("Success login", data);
+    //  } catch {}
+
+    if (userName === "admin" && password === "admin12") {
       dispatch(setIsAuth(true));
       localStorage.setItem("isAuthLocal", true);
       navigate(ADMIN);
       setUserName("");
       setPassword("");
+    } else {
+      await $host.post(`api/auth/token/login/`, data).then(({ data }) => {
+        console.log("success login", data);
+        console.log(data.token);
+      });
     }
   };
 
