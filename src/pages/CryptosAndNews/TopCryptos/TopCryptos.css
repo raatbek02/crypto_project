@@ -1,0 +1,77 @@
+.topCryptos__container {
+  padding: 20px;
+}
+
+.topCryptos__content--title {
+  font-size: 24px;
+  color: #3e3e3e;
+  font-weight: 600;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.topCryptos__content--item {
+  width: 100%;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #3e3e3e;
+  cursor: pointer;
+}
+.topCryptos__content--item:first-child {
+  font-weight: 900;
+  color: #3e3e3e;
+}
+.topCryptos__content--item:nth-child(2n + 2) {
+  background-color: rgb(219, 219, 219);
+}
+.topCryptos__content--item--left {
+  width: 50%;
+  display: flex;
+  color: #3e3e3e;
+  font-weight: 600;
+  /* justify-content: space-between; */
+}
+.topCryptos__num {
+  width: 30%;
+}
+.topCryptos__nameS {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+.topCryptos__name {
+  width: 50%;
+  display: flex;
+}
+.topCryptos__img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+.topCryptos__img img {
+  width: 100%;
+}
+
+.topCryptos__content--item--right {
+  width: 50%;
+  display: flex;
+}
+.topCryptos__price {
+  width: 33%;
+}
+.topCryptos__24h {
+  width: 33%;
+}
+.topCryptos__24h.red {
+  color: #ee3722;
+  font-weight: 600;
+}
+.topCryptos__24h.green {
+  color: #00ff15;
+  font-weight: 600;
+}
+.topCryptos__marketCup {
+  width: 33%;
+}

@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import lottie from "lottie-web";
 import Modal from "./components/UI/Modal/Modal";
 import WelcomeModal from "./components/UI/WelcomeModal/WelcomeModal";
+import Header from "./components/Main/Header/Header";
 
 function App() {
   const [activeWelcome, setActiveWelcome] = useState(false);

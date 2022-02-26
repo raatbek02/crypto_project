@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Routes, Route } from "react-router-dom";
 import { privateRoutes, publicRoutes } from "../routes";
+import Header from "./Main/Header/Header";
 
 function AppRoutes() {
   const isAuth = useSelector((state) => state.isAuth.isAuth);
@@ -15,7 +16,9 @@ function AppRoutes() {
           ))}
 
         {publicRoutes.map(({ path, Component }) => (
-          <Route primary={false} key={path} path={path} element={Component} />
+          <>
+            <Route primary={false} key={path} path={path} element={Component} />
+          </>
         ))}
       </Routes>
     </div>

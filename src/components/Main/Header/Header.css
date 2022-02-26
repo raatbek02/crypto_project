@@ -1,5 +1,6 @@
 .header {
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
+  padding: 30px 30px 0 30px;
 }
 .header__content {
   display: flex;
@@ -14,7 +15,7 @@
 .header__title h1 {
   cursor: pointer;
   color: #11468f;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 24px;
 }
 
@@ -37,6 +38,23 @@
 .header__burger {
   display: none;
 }
+
+.header__logoutBtn {
+  padding: 10px 40px;
+  border-radius: 8px;
+  background: #11468f;
+  font-weight: 600;
+  color: #fff;
+  font-size: 16px;
+}
+.header__logoutBtn:hover {
+  background: #062e66;
+  transition: all 0.3s linear;
+}
+.header__logoutBtn:active {
+  background: #001025;
+}
+
 /* **************************** MEDIA QUERY *********************************************** */
 
 /* --------------------------------------@media (max-width: 1200px)-------------------------- */

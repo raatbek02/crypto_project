@@ -11,7 +11,7 @@ import right from "../../../assets/images/categories_images/right.png";
 
 import "./Categories.css";
 import { useDispatch, useSelector } from "react-redux";
-import { addCoins } from "../../../store/coins_store";
+import { addCoins } from "../../../store/coins_category";
 import { add_coinId } from "../../../store/coin_id";
 import { add_coinDetail } from "../../../store/coin_detail";
 
@@ -21,7 +21,7 @@ function Categories() {
   //  const [coins, setCoins] = useState([]);
   const [activeCategory, setActiveCategory] = useState("bitcoin");
   const dispatch = useDispatch();
-  const coins = useSelector((s) => s.coins_store.coins);
+  const coins = useSelector((s) => s.coins_category.coins);
 
   localStorage.setItem("bitcoin_data", JSON.stringify(coins[0]));
 

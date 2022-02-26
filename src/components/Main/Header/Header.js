@@ -11,12 +11,26 @@ import info from "../../../assets/images/header_images/info.svg";
 import profile from "../../../assets/images/header_images/profile.svg";
 
 import "./Header.css";
+import { useLocation, useNavigate } from "react-router-dom";
+import { setIsAuth } from "../../../store/isAuth";
+import { HOME } from "../../../utils/consts";
 
 function Header() {
   //   const [activeBurger, setActiveBurger] = useState(false);
   const [modalAuth, setModalAuth] = useState(false);
   const activeBurger = useSelector((s) => s.activeBurger.activeBurger);
   const dispatch = useDispatch();
+
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log("location", location);
+
+  const logout = () => {
+    localStorage.setItem("isAuthLocal", false);
+    dispatch(setIsAuth(false));
+    navigate(HOME);
+  };
+
   return (
     <div className="header">
       <div className="header__content">
@@ -52,7 +66,19 @@ function Header() {
       </div>
 
       <Modal active={modalAuth} setActive={setModalAuth}>
-        <AuthContent />
+        {location.pathname !== "/admin" ? (
+          <AuthContent setModalAuth={setModalAuth} />
+        ) : (
+          <button
+            onClick={() => {
+              logout();
+              setModalAuth(false);
+            }}
+            className="header__logoutBtn"
+          >
+            Logout
+          </button>
+        )}
       </Modal>
     </div>
   );

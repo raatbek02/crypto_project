@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { $host } from "../../../http";
 import { login, registration } from "../../../http/userApi";
 import { setIsAuth } from "../../../store/isAuth";
@@ -8,7 +8,7 @@ import { ADMIN } from "../../../utils/consts";
 
 import "./AuthContent.css";
 
-function AuthContent() {
+function AuthContent({ setModalAuth }) {
   const [hasAccount, setHasAccount] = useState(true);
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
@@ -112,7 +112,13 @@ function AuthContent() {
               />
             </p>
             <div className="authContent__button">
-              <button onClick={() => signIn()} type="submit">
+              <button
+                onClick={() => {
+                  setModalAuth(false)
+                  signIn();
+                }}
+                type="submit"
+              >
                 SIGN IN
               </button>
             </div>

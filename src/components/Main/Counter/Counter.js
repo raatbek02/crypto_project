@@ -105,30 +105,56 @@ function Counter() {
       });
   };
 
-//   const typingPriceHandler = async (e) => {
-//     const data_2 = {
-//       price: typing_price,
-//     };
+  useEffect(() => {
+    const resetQnt = async () => {
+      const data = {
+        device_item: 1,
+      };
+      await $host
+        .put(`api/reset-device/`, data, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+        .then((res) => {
+          $host
+            .get(`api/device-item/`)
+            .then(({ data }) => {
+              setDevice(data);
+            })
+            .catch((e) => {
+              // console.log("error price");
+            });
+        });
+    };
 
-//     setPrice(typing_price);
+    resetQnt();
+  }, []);
 
-//     if (Number(typing_price) >= 25000 && e.key === "Enter") {
-//       await $host.put(`api/device/1/`, data_2, {
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//       });
+  //   const typingPriceHandler = async (e) => {
+  //     const data_2 = {
+  //       price: typing_price,
+  //     };
 
-//       await $host.get(`api/device-item/`).then(({ data }) => {
-//         setDevice(data);
-//       });
-//     } else {
-//       warn_price();
-//     }
-//     // else if (typing_price === "" && e.key === "Enter") {
-//     //       setPrice(0);
-//     //     }
-//   };
+  //     setPrice(typing_price);
+
+  //     if (Number(typing_price) >= 25000 && e.key === "Enter") {
+  //       await $host.put(`api/device/1/`, data_2, {
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //       });
+
+  //       await $host.get(`api/device-item/`).then(({ data }) => {
+  //         setDevice(data);
+  //       });
+  //     } else {
+  //       warn_price();
+  //     }
+  //     // else if (typing_price === "" && e.key === "Enter") {
+  //     //       setPrice(0);
+  //     //     }
+  //   };
   return (
     <div className="counter">
       {device &&

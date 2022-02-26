@@ -13,14 +13,14 @@ import sidebar_footer_icon from "../../assets/images/sidebar_images/sidebar_foot
 
 import "./Sidebar.css";
 import { Link } from "react-router-dom";
-import { ADMIN, HOME } from "../../utils/consts";
+import { ADMIN, CRYPTOS_AND_NEWS, HOME, HTU } from "../../utils/consts";
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveBurger } from "../../store/activeBurger";
 import Modal from "../UI/Modal/Modal";
 import AuthContent from "../Auth/AuthContent/AuthContent";
 
 function Sidebar() {
-//   const [modalAuth, setModalAuth] = useState(false);
+  //   const [modalAuth, setModalAuth] = useState(false);
 
   const activeBurger = useSelector((s) => s.activeBurger.activeBurger);
   const dispatch = useDispatch();
@@ -56,14 +56,18 @@ function Sidebar() {
               <span>Overview</span>
             </button>
           </Link>
-          <button>
-            <img src={sidebar_2} alt="" />
-            <span>Portfolio</span>
-          </button>{" "}
-          <button>
-            <img src={sidebar_3} alt="" />
-            <span>Watchlist</span>
-          </button>{" "}
+          <Link to={CRYPTOS_AND_NEWS}>
+            <button>
+              <img src={sidebar_2} alt="" />
+              <span>Top cryptos</span>
+            </button>
+          </Link>
+          <Link to={HTU}>
+            <button>
+              <img src={sidebar_3} alt="" />
+              <span>How to trade</span>
+            </button>{" "}
+          </Link>
           <button>
             <img src={sidebar_4} alt="" />
             <span>Orders</span>

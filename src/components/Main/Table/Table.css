@@ -14,7 +14,7 @@
   display: flex;
 }
 .table__header--buttons button {
-  padding: 9px 60px;
+  padding: 9px 40px;
   font-size: 12px;
   font-weight: 700;
   border-radius: 8px;
@@ -34,6 +34,9 @@
 .table__header--btn_sell button:active {
   background-color: #fad75b;
 }
+.table__header--btn_notSell {
+  margin-right: 15px;
+}
 .table__header--btn_notSell button {
   background-color: #a5a5a5;
   color: #fff;
@@ -45,6 +48,19 @@
 .table__header--btn_notSell button:active {
   background-color: #9b9999;
 }
+
+
+.table__header--btn_reset button{
+	background-color: rgb(226, 226, 226);
+	transition: all .3s ease-in-out;
+}
+.table__header--btn_reset button:hover{
+	background-color: rgb(163, 163, 163);
+}
+.table__header--btn_reset button:active{
+	background-color: rgb(73, 70, 70);
+}
+
 
 .table__header--middle span {
   color: #1d2746;

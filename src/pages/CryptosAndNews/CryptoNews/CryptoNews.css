@@ -1,0 +1,27 @@
+.cryptoNews__content {
+  width: 100%;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  color: #3e3e3e;
+  font-weight: 600;
+  margin-top: 20px;
+}
+.cryptoNews__item {
+  width: 95%;
+  cursor: pointer;
+}
+.cryptoNews__img {
+  width: 100%;
+  height: 135px;
+}
+.cryptoNews__img img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: contain; */
+  display: block;
+  border-radius: 10px;
+}
+
+.cryptoNews__title {
+  margin-top: 20px;
+}

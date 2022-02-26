@@ -181,6 +181,21 @@ function Table() {
     }
   };
 
+  const resetSale = async () => {
+   
+    await $host.put(`api/reset-table/`).then((res) => {
+      console.log("Success reset");
+    });
+
+    await $host
+      .get(`api/table-products/?page=${activeYearNum}`)
+      .then(({ data }) => {
+        dispatch(addProducts(data));
+
+        //  console.log("getProducts", data);
+      });
+  };
+
   return (
     <div className="table">
       <div className="table__header">
@@ -191,6 +206,9 @@ function Table() {
             </div>
             <div className="table__header--btn_notSell">
               <button onClick={() => notSell_product()}>CANCEL</button>
+            </div>
+            <div className="table__header--btn_reset">
+              <button onClick={() => resetSale()}>RESET</button>
             </div>
           </div>
         </div>

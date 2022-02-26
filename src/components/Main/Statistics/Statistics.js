@@ -11,7 +11,7 @@ import axios from "axios";
 function Statistics() {
   const [coin_data, setCoin_data] = useState({});
   const [timeFormat, setTimeFormat] = useState("1y");
-  const coins = useSelector((s) => s.coins_store.coins);
+  const coins = useSelector((s) => s.coins_category.coins);
   const coin_id = useSelector((s) => s.coin_id.coin_id);
   const coin_detail = useSelector((s) => s.coin_detail.coin_detail);
 

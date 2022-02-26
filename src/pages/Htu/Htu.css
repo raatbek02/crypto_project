@@ -1,0 +1,35 @@
+.htu {
+  margin-top: 30px;
+  color: #3e3e3e;
+}
+.htu__container {
+  padding: 20px;
+}
+
+.htu__item {
+  margin-top: 70px;
+}
+.htu__item:first-child {
+  margin-top: 0;
+}
+.htu__item--content {
+  display: flex;
+  justify-content: space-between;
+}
+.htu__title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.htu__text {
+  width: 60%;
+  line-height: 1.5;
+}
+
+.htu__img {
+  width: 40%;
+  text-align: center;
+}
+.htu__img img {
+  width: 90%;
+}

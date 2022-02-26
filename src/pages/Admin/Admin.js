@@ -13,7 +13,7 @@ import { setActiveBurger } from "../../store/activeBurger";
 
 import profile from "../../assets/images/header_images/profile.svg";
 import "./Admin.css";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { HOME } from "../../utils/consts";
 import { setIsAuth } from "../../store/isAuth";
 
@@ -51,16 +51,10 @@ function Admin() {
     getProducts();
   }, [activeYear]);
 
-  const logout = () => {
-    localStorage.setItem("isAuthLocal", false);
-    dispatch(setIsAuth(false));
-    navigate(HOME);
-  };
-
   return (
     <div className="admin">
       <div className="admin__container">
-        <div className="admin__header">
+        {/* <div className="admin__header">
           <div
             onClick={() => dispatch(setActiveBurger(!activeBurger))}
             className={
@@ -76,7 +70,7 @@ function Admin() {
 
             <span>Logout</span>
           </div>
-        </div>
+        </div> */}
 
         <div className="admin__content">
           <div className="admin__contentHeader">
