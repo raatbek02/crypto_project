@@ -52,16 +52,17 @@
 
 .sidebar__footer ul {
   color: #fff;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 500;
-  padding-left: 15%;
+  padding-left: 30%;
 }
-.sidebar__footer ul li:first-child {
+/* .sidebar__footer ul li:first-child {
   font-size: 14px;
   font-weight: 700;
-}
+} */
 .sidebar__footer ul li {
   margin-bottom: 15px;
+  cursor: pointer;
 }
 .sidebar__footer p {
   display: flex;

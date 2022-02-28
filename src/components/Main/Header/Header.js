@@ -41,7 +41,7 @@ function Header() {
           <span></span>
         </div>
         <div className="header__title">
-          <h1>Cryptocurrencies</h1>
+          <h1>BitcoinCity</h1>
         </div>
         <div className="header__assets">
           <ul>

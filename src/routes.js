@@ -3,8 +3,18 @@ import Admin from "./pages/Admin/Admin";
 import TopCryptos from "./pages/CryptosAndNews/TopCryptos/TopCryptos";
 import Home from "./pages/Home";
 import Htu from "./pages/Htu/Htu";
+import About from "./pages/About/About";
 // import Test from "./pages/Test/Test";
-import { ADMIN, CRYPTOS_AND_NEWS, HOME, HTU, TEST } from "./utils/consts";
+import {
+  ADMIN,
+  CRYPTOS_AND_NEWS,
+  HOME,
+  HTU,
+  TEST,
+  ABOUT,
+  CONTACT_US,
+} from "./utils/consts";
+import ContactUs from "./pages/ContactUs/ContactUs";
 
 export const privateRoutes = [
   {
@@ -29,5 +39,14 @@ export const publicRoutes = [
   {
     path: HTU,
     Component: <Htu />,
+  },
+
+  {
+    path: ABOUT,
+    Component: <About />,
+  },
+  {
+    path: CONTACT_US,
+    Component: <ContactUs />,
   },
 ];

@@ -13,14 +13,15 @@ import sidebar_footer_icon from "../../assets/images/sidebar_images/sidebar_foot
 
 import "./Sidebar.css";
 import { Link } from "react-router-dom";
-import { ADMIN, CRYPTOS_AND_NEWS, HOME, HTU } from "../../utils/consts";
+import { ABOUT, ADMIN, CRYPTOS_AND_NEWS, HOME, HTU } from "../../utils/consts";
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveBurger } from "../../store/activeBurger";
 import Modal from "../UI/Modal/Modal";
 import AuthContent from "../Auth/AuthContent/AuthContent";
+import ContactUs from "../../pages/ContactUs/ContactUs";
 
 function Sidebar() {
-  //   const [modalAuth, setModalAuth] = useState(false);
+  const [activeBackCall, setActiveBackCall] = useState(false);
 
   const activeBurger = useSelector((s) => s.activeBurger.activeBurger);
   const dispatch = useDispatch();
@@ -30,7 +31,7 @@ function Sidebar() {
         <div className="sidebar__header ">
           <div className="sidebar__title">
             <img src={sidebar_title} alt="" />
-            <span>CriptoCurrency</span>
+            <span>CryptoCurrency</span>
           </div>
           <div
             onClick={() => dispatch(setActiveBurger(!activeBurger))}
@@ -68,14 +69,14 @@ function Sidebar() {
               <span>How to trade</span>
             </button>{" "}
           </Link>
-          <button>
+          {/* <button>
             <img src={sidebar_4} alt="" />
             <span>Orders</span>
           </button>
           <button>
             <img src={sidebar_5} alt="" />
             <span>Reports</span>
-          </button>{" "}
+          </button>{" "} */}
           {/* <button
             className="sidebar__mobileLogin"
             onClick={() => setModalAuth(true)}
@@ -101,14 +102,17 @@ function Sidebar() {
           <img src={sidebar_footer_icon} alt="" />
         </div> */}
         <ul>
-          <li>About us</li>
-          <li>Methodology</li>
-          <li>Careers</li>
-          <li>Branding Guide</li>
-          <li>Advertising</li>
+          <Link to={ABOUT}>
+            <li>About us</li>
+          </Link>
+
+          <li onClick={() => setActiveBackCall(true)}>Contact us</li>
         </ul>
         <p>Copyright &copy; 2022</p>
       </div>
+      <Modal active={activeBackCall} setActive={setActiveBackCall}>
+        <ContactUs />
+      </Modal>
     </div>
   );
 }

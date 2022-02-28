@@ -1,0 +1,36 @@
+.contactUs {
+  width: 100%;
+  color: #3e3e3e;
+}
+.contactUs__title {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.contactUs form {
+  text-align: center;
+}
+
+.contactUs form input {
+  width: 100%;
+
+  display: block;
+  height: 30px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #3e3e3e;
+}
+.contactUs form input::placeholder {
+  color: #989898;
+  font-size: 17px;
+  padding-left: 5px;
+}
+.contactUs form button {
+  padding: 10px 30px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: #11468f;
+}
