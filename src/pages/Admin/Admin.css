@@ -39,7 +39,7 @@
 }
 .admin__selectYear {
 }
-.admin__content {
+.admin__contentTable {
   width: 60%;
   height: 450px;
   overflow-y: scroll;
@@ -214,7 +214,7 @@
 
   /* --------------------------------------------------------------- */
 
-  .admin__content {
+  .admin__contentTable {
     width: 70%;
   }
 }
@@ -222,7 +222,7 @@
 /* --------------------------------------@media (max-width: 768px)-------------------------- */
 
 @media (max-width: 768px) {
-  .admin__content {
+  .admin__contentTable {
     width: 90%;
   }
 }
@@ -247,7 +247,7 @@
   .admin__container {
     padding: 20px;
   }
-  .admin__content {
+  .admin__contentTable {
     width: 100%;
     padding: 20px;
   }
@@ -269,18 +269,18 @@
   }
 }
 
-.admin__content::-webkit-scrollbar {
+.admin__contentTable::-webkit-scrollbar {
   width: 3px;
   height: 0;
   background-color: rgb(255, 255, 255);
 }
-.admin__content::-webkit-scrollbar-thumb {
+.admin__contentTable::-webkit-scrollbar-thumb {
   width: 3px;
   height: 0;
   /* border-radius: 5px; */
   background: #11468f;
 }
-.admin__content::-webkit-scrollbar-track {
+.admin__contentTable::-webkit-scrollbar-track {
   height: 0;
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
   /* border-radius: 10px; */

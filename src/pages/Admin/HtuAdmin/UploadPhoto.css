@@ -1,0 +1,21 @@
+/* .fileInput input {
+  display: none;
+} */
+
+.fileInput input + label {
+  padding: 5px;
+  width: 200px;
+  height: 120px;
+  border-radius: 15px;
+  background-color: blue;
+  color: white;
+
+  /* margin-bottom: 50px; */
+}
+.fileInput label {
+  background-color: blue;
+  padding: 10px 30px;
+}
+.imageUploader {
+  display: none;
+}

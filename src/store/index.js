@@ -7,6 +7,7 @@ import device_count from "./device_count";
 import products from "./products";
 import activeYearNum from "./activeYearNum";
 import activeBurger from "./activeBurger";
+import htu_store from "./htu_store";
 import isAuth from "./isAuth";
 
 export default configureStore({
@@ -20,5 +21,6 @@ export default configureStore({
     activeYearNum,
     activeBurger,
     isAuth,
+    htu_store,
   },
 });

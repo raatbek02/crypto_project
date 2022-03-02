@@ -8,18 +8,17 @@
   align-items: center;
 }
 .header__title {
-  width: 60%;
-  display: flex;
-  justify-content: end;
+  /* width: 100%; */
 }
 .header__title h1 {
   cursor: pointer;
   color: #11468f;
   font-weight: 700;
   font-size: 24px;
+  text-align: center;
 }
 
-.header__assets {
+/* .header__assets {
   width: 50%;
   display: flex;
   justify-content: end;
@@ -33,13 +32,13 @@
   align-items: center;
   margin-left: 30px;
   cursor: pointer;
-}
+} */
 
 .header__burger {
   display: none;
 }
 
-.header__logoutBtn {
+/* .header__logoutBtn {
   padding: 10px 40px;
   border-radius: 8px;
   background: #11468f;
@@ -53,17 +52,24 @@
 }
 .header__logoutBtn:active {
   background: #001025;
-}
+} */
 
 /* **************************** MEDIA QUERY *********************************************** */
 
 /* --------------------------------------@media (max-width: 1200px)-------------------------- */
 
 @media (max-width: 992px) {
+  .header__content {
+    justify-content: start;
+    margin-bottom: 30px;
+  }
+  .header__title {
+    margin-left: 40%;
+  }
   .header__burger {
     display: block;
 
-    z-index: 5;
+    z-index: 10;
     position: relative;
     width: 30px;
     height: 18px;
@@ -111,25 +117,25 @@
     transform: rotate(45deg) translate(0px, 50%);
   }
 
-  .admin__header h2 {
+  /* .admin__header h2 {
     margin-left: unset;
-  }
+  } */
 }
 
 /* --------------------------------------@media (max-width: 1200px)-------------------------- */
-.header__assets--mobile {
+/* .header__assets--mobile {
   display: none;
-}
+} */
 @media (min-width: 575px) and (max-width: 768px) {
-  .header__title h1 {
+  /* .header__title h1 {
     margin-left: 50px;
-  }
+  } */
 }
 
 @media (max-width: 768px) {
-  .header__content {
+  /* .header__content {
     justify-content: space-between;
-  }
+  } */
   .header__title {
     width: unset;
     font-size: 18px;
@@ -137,23 +143,24 @@
   .header__title h1 {
     font-size: 18px;
   }
-  .header__assets {
+  /* .header__assets {
     width: unset;
-  }
+  } */
 }
 /* --------------------------------------@media (max-width: 575px)-------------------------- */
 
 @media (max-width: 575px) {
   .header__title {
     width: unset;
+    margin-left: 30%;
   }
   .header__title h1 {
     font-size: 16px;
   }
-  .header__assets {
+  /* .header__assets {
     display: none;
   }
   .header__assets--mobile {
     display: block;
-  }
+  } */
 }

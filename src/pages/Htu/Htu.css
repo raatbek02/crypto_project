@@ -33,3 +33,27 @@
 .htu__img img {
   width: 90%;
 }
+
+/* ************************************* media 992px************************** */
+.htu__img.mobile {
+  display: none;
+}
+@media (max-width: 992px) {
+  .htu__item--content {
+    flex-direction: column;
+  }
+  .htu__img.desktop {
+    display: none;
+  }
+  .htu__img.mobile {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .htu__title {
+    text-align: center;
+  }
+  .htu__text {
+    width: 100%;
+  }
+}

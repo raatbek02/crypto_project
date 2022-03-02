@@ -36,9 +36,7 @@ function CryptoNews() {
             575: {
               slidesPerView: 3,
             },
-            430: {
-              slidesPerView: 3,
-            },
+          
             320: {
               slidesPerView: 2,
             },

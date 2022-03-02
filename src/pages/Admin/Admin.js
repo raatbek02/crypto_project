@@ -16,6 +16,7 @@ import "./Admin.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { HOME } from "../../utils/consts";
 import { setIsAuth } from "../../store/isAuth";
+import HtuAdmin from "./HtuAdmin/HtuAdmin";
 
 function Admin() {
   const [activeYear, setActiveYear] = useState(1);
@@ -72,7 +73,7 @@ function Admin() {
           </div>
         </div> */}
 
-        <div className="admin__content">
+        <div className="admin__contentTable">
           <div className="admin__contentHeader">
             <div className="admin__selectYear dekstop">
               <FormControl sx={{ m: 1, minWidth: 120 }} color="warning">
@@ -159,6 +160,8 @@ function Admin() {
               ))}
           </div>
         </div>
+
+        {/* <HtuAdmin/> */}
       </div>
       <Modal active={activeEdit} setActive={setActiveEdit}>
         <Editing

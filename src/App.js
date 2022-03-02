@@ -39,19 +39,19 @@ function App() {
 
   return (
     <div className="App">
-      <div className="desktop">
+      <div className="app_desktop">
         <div className="app__container">
           <Sidebar />
           <ContentBlock />
         </div>
       </div>
-      <div className="mobile">
+      <div className="app_mobile">
         <div className="app__container">
           <div className={activeBurger ? "app__left _active" : "app__left "}>
             <Sidebar />
           </div>
           <div className="app__right">
-            <AppRoutes />
+            <ContentBlock />
           </div>
         </div>
       </div>

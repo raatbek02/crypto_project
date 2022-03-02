@@ -45,9 +45,15 @@
   cursor: pointer;
 
   background: transparent;
+  transition: all .3s linear;
+}
+.sidebar__list button:hover {
+	color: #ffc400;
 }
 .sidebar__list button img {
   margin-right: 10px;
+  display: block;
+  width: 25px;
 }
 
 .sidebar__footer ul {

@@ -1,12 +1,52 @@
-import React from "react";
+import { LocalConvenienceStoreOutlined } from "@mui/icons-material";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { $host } from "../../http";
+import { add_htu } from "../../store/htu_store";
+
 import "./Htu.css";
 
 function Htu() {
+  //   const [htu_store, setHtu_store] = useState([]);
+  const htu_store = useSelector((s) => s.htu_store.htu_store);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const getHtu_store = async () => {
+      await $host
+        .get(`api/news`)
+        .then(({ data }) => {
+          dispatch(add_htu(data));
+          //  setHtu_store(data);
+          console.log("success", data);
+        })
+        .catch((e) => {
+          console.log("error", e);
+        });
+    };
+    getHtu_store();
+  }, []);
+
   return (
     <div className="htu">
       <div className="htu__container">
         <div className="htu__content">
-          <div className="htu__item">
+          {htu_store &&
+            htu_store.map((el) => (
+              <div key={el.id} className="htu__item">
+                <div className="htu__title">{el.title}</div>
+                <div className="htu__item--content">
+                  <div className="htu__img mobile">
+                    <img src={el.image} alt="" />
+                  </div>
+                  <div className="htu__text">{el.description}</div>
+                  <div className="htu__img desktop">
+                    <img src={el.image} alt="" />
+                  </div>
+                </div>
+              </div>
+            ))}
+          {/* <div className="htu__item">
             <div className="htu__title">Traditional Buy and Hold Investing</div>
             <div className="htu__item--content">
               <div className="htu__text">
@@ -61,34 +101,7 @@ function Htu() {
                 />
               </div>
             </div>
-          </div>{" "}
-          <div className="htu__item">
-            <div className="htu__title">Cryptocurrency Mining</div>
-            <div className="htu__item--content">
-              <div className="htu__text">
-                Another way to make money with crypto is to mine for it. This
-                option does, however, require an outlay of capital upfront. You
-                would have to buy a miner (or miners) or build them yourself.
-                Either way, there will be a substantial investment in equipment
-                required. You will also incur facilities costs because miners
-                produce a lot of heat, so you can’t just stick them in a room
-                and turn them on without some sort of cooling. If you are
-                willing to invest capital upfront, mining can be profitable
-                depending on market conditions. A helpful website to determine
-                what to mine and how profitable it will be is whattomine.com.
-                The type of miner you will need will depend on what you decide
-                to mine. If you strictly want to mine Bitcoin, you need an ASIC
-                miner like the Antminer S19 Pro. However, if you’re going to
-                mine a variety of cryptocurrencies, you need a GPU miner.
-              </div>
-              <div className="htu__img">
-                <img
-                  src="https://www.technologistan.pk/wp-content/uploads/2021/06/what-is-crypto-mining-cryptomining-farm-940x588-1.jpg"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
+          </div>{" "} */}
         </div>
       </div>
     </div>

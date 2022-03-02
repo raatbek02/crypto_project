@@ -34,6 +34,7 @@
 }
 .topCryptos__num {
   width: 30%;
+  padding-left: 10px;
 }
 .topCryptos__nameS {
   width: 70%;
@@ -74,4 +75,70 @@
 }
 .topCryptos__marketCup {
   width: 33%;
+}
+
+/* *****************************************@media(max-width:768px)******************************** */
+
+@media (max-width: 768px) {
+  .topCryptos__content--title {
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .topCryptos__content--cryptos {
+    overflow-x: scroll;
+  }
+}
+
+/* *****************************************@media(max-width:575px)******************************** */
+.topCryptos__content--cryptos.mobile {
+  display: none;
+}
+@media (max-width: 575px) {
+  .topCryptos__container {
+    padding: 10px;
+  }
+  .topCryptos__content--cryptos.desktop {
+    display: none;
+  }
+  .topCryptos__content--cryptos.mobile {
+    display: block;
+  }
+  .topCryptos__content--item {
+    padding: 15px 10px;
+  }
+  .topCryptos__content--item:first-child {
+    /* white-space: nowrap; */
+    font-weight: 600;
+  }
+
+  .topCryptos__content--item--left {
+    display: block;
+  }
+  .topCryptos__content--item--right {
+    display: block;
+    text-align: end;
+  }
+  .topCryptos__leftTop {
+    display: flex;
+    margin-bottom: 8px;
+  }
+  .topCryptos__leftBottom {
+    display: flex;
+  }
+
+  .topCryptos__symbol {
+    margin-right: 15px;
+  }
+
+  .topCryptos__rightTop {
+    margin-bottom: 8px;
+  }
+  .topCryptos__price {
+    width: unset;
+  }
+  .topCryptos__marketCup {
+    width: unset;
+    font-size: 12px;
+  }
 }

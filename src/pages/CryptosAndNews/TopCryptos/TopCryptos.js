@@ -35,13 +35,13 @@ function TopCryptos() {
             Cryptocurrency Prices by Market Cap
           </div>
 
-          <div className="topCryptos__content--cryptos">
+          <div className="topCryptos__content--cryptos desktop">
             <div className="topCryptos__content--item">
               <div className="topCryptos__content--item--left">
                 <div
                   className="topCryptos__num"
                   style={{
-                    marginLeft: "10px",
+                    //   marginLeft: "10px",
                     fontWeight: "900",
                   }}
                 >
@@ -85,7 +85,7 @@ function TopCryptos() {
             {coinsTop.map((el, index) => (
               <div key={el.id} className="topCryptos__content--item">
                 <div className="topCryptos__content--item--left">
-                  <div className="topCryptos__num">№{index + 1}</div>
+                  <div className="topCryptos__num">{index + 1}</div>
                   <div className="topCryptos__nameS">
                     <div className="topCryptos__name">
                       <div className="topCryptos__img">
@@ -112,6 +112,47 @@ function TopCryptos() {
                   )}
 
                   <div className="topCryptos__marketCup">${el.market_cap}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="topCryptos__content--cryptos mobile">
+            {coinsTop.map((el, index) => (
+              <div key={el.id} className="topCryptos__content--item">
+                <div className="topCryptos__content--item--left">
+                  <div className="topCryptos__leftTop">
+                    <div className="topCryptos__img">
+                      <img src={el.image} alt="" />
+                    </div>
+                    <span>{el.name}</span>
+                  </div>
+                  <div className="topCryptos__leftBottom">
+                    <div className="topCryptos__symbol">{el.symbol}</div>
+                    {el.price_change_percentage_24h < 0 ? (
+                      <div className="topCryptos__24h red">
+                        {el.price_change_percentage_24h.toFixed(2)}%
+                      </div>
+                    ) : (
+                      <div className="topCryptos__24h green">
+                        {el.price_change_percentage_24h.toFixed(2)}%
+                      </div>
+                    )}
+                  </div>
+                </div>
+                <div className="topCryptos__content--item--right">
+                  <div className="topCryptos__rightTop">
+                    <div className="topCryptos__price">
+                      ${el.current_price.toFixed(2)}
+                    </div>
+                  </div>
+
+                  <div className="topCryptos__rightBottom">
+                    <div className="topCryptos__marketCup">
+                      {/* {String(el.market_cap).slice(0, 2)} Bn */}
+                      Mkt cap ${el.market_cap}
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}

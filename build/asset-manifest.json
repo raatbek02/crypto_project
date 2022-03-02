@@ -1,23 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.c9108b8a.css",
-    "main.js": "/static/js/main.82357a9a.js",
+    "main.css": "/static/css/main.005528d1.css",
+    "main.js": "/static/js/main.83f18c8c.js",
     "static/js/787.18aeafbd.chunk.js": "/static/js/787.18aeafbd.chunk.js",
     "static/media/about_us_bitcoincity.png": "/static/media/about_us_bitcoincity.0a716e3a94809968a4fe.png",
-    "static/media/sidebar_footer_icon.png": "/static/media/sidebar_footer_icon.dc774084f335c2bec0c7.png",
-    "static/media/notification.svg": "/static/media/notification.324a5c2fa4e72d7fcf860aafce83a6d7.svg",
     "index.html": "/index.html",
-    "static/media/info.svg": "/static/media/info.c42a68ec4acef80e16696803a4a9cc36.svg",
-    "static/media/search.svg": "/static/media/search.8c40106a53e3575816fbc6430a6244dc.svg",
     "static/media/profile.svg": "/static/media/profile.2d92b7fe125cc58e1ebfb1cae86803ce.svg",
+    "static/media/profile_white.svg": "/static/media/profile_white.127938f11b4fe34164537627b0a7c74d.svg",
     "static/media/left.svg": "/static/media/left.eac6d94d7fd1b423b8f47bc253fdeb6e.svg",
     "static/media/right.svg": "/static/media/right.d1b9803779354bef96c92dc12287311c.svg",
-    "main.c9108b8a.css.map": "/static/css/main.c9108b8a.css.map",
-    "main.82357a9a.js.map": "/static/js/main.82357a9a.js.map",
+    "main.005528d1.css.map": "/static/css/main.005528d1.css.map",
+    "main.83f18c8c.js.map": "/static/js/main.83f18c8c.js.map",
     "787.18aeafbd.chunk.js.map": "/static/js/787.18aeafbd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c9108b8a.css",
-    "static/js/main.82357a9a.js"
+    "static/css/main.005528d1.css",
+    "static/js/main.83f18c8c.js"
   ]
 }

@@ -25,3 +25,15 @@
 .cryptoNews__title {
   margin-top: 20px;
 }
+
+/* *****************************************@media(max-width:768px)******************************** */
+
+@media (max-width: 768px) {
+  .cryptoNews__img {
+    height: unset;
+  }
+  .cryptoNews__title {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+}
