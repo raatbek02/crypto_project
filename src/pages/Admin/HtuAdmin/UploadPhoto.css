@@ -2,20 +2,57 @@
   display: none;
 } */
 
-.fileInput input + label {
+.fileInput {
+  margin-top: 10px;
+}
+.fileInput input {
+  display: none;
+}
+
+/* .fileInput input + label {
   padding: 5px;
   width: 200px;
   height: 120px;
   border-radius: 15px;
-  background-color: blue;
   color: white;
+  border-radius: 9px;
 
-  /* margin-bottom: 50px; */
-}
+} */
 .fileInput label {
-  background-color: blue;
+  background-color: #11468f;
   padding: 10px 30px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.fileInput label:hover {
+  background-color: #032a61;
 }
 .imageUploader {
   display: none;
+}
+
+.fileImages {
+  width: 90%;
+  margin: 40px auto 0;
+}
+.fileImages img {
+  width: 100%;
+}
+.fileDelete {
+  width: 90%;
+  margin: 10px auto;
+}
+.fileDelete button {
+  width: 100%;
+  padding: 10px 0;
+  background-color: rgb(146, 0, 0);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.fileDelete button:hover {
+  background-color: rgb(44, 0, 0);
 }

@@ -161,7 +161,7 @@ function Admin() {
           </div>
         </div>
 
-        {/* <HtuAdmin/> */}
+        <HtuAdmin/>
       </div>
       <Modal active={activeEdit} setActive={setActiveEdit}>
         <Editing

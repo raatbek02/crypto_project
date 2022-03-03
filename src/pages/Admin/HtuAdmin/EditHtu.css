@@ -1,0 +1,56 @@
+.editHtu {
+  width: 400px;
+  height: 300px;
+  color: #3e3e3e;
+  font-weight: 700;
+  overflow-y: scroll;
+}
+.editHtu h2 {
+  text-align: center;
+  color: #002558;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.editHtu__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #3e3e3e;
+  margin-bottom: 15px;
+}
+.editHtu__left {
+  width: 50%;
+}
+.editHtu__right {
+  width: 50%;
+  text-align: end;
+}
+.editHtu__title {
+  font-size: 16px;
+}
+.editHtu__btns button {
+  padding: 8px 15px;
+  color: #fff;
+  font-weight: 600;
+}
+.editHtu__btns button:first-child {
+  background-color: #002558;
+}
+.editHtu__btns button:last-child {
+  background-color: #8b0000;
+}
+
+.editHtu::-webkit-scrollbar {
+  width: 1px;
+  background-color: rgb(255, 255, 255);
+}
+.editHtu::-webkit-scrollbar-thumb {
+  width: 1px;
+  background: #11468f;
+}
+.editHtu::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  background-color: #f9f9fd;
+}
+

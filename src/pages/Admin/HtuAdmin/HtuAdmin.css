@@ -15,45 +15,44 @@
   font-size: 24px;
   font-weight: 700;
 }
-.htuAdmin__addButtons {
+.htuAdmin__addEdit {
   text-align: center;
   padding-bottom: 30px;
   margin: 20px 0;
   border-bottom: 1px solid #3e3e3e;
 }
-.htuAdmin__addButtons button {
+.htuAdmin__addEdit button {
   padding: 10px 60px;
   margin: 0 10px;
   border-radius: 8px;
+  font-size: 16px;
 }
 
-.htuAdmin__addButtons button:first-child {
+.htuAdmin__addEdit button:first-child {
   background-color: #11468f;
-  font-size: 16px;
   color: #fff;
   font-weight: 700;
   transition: all 0.3s linear;
 }
 
-.htuAdmin__addButtons button:first-child:hover {
+.htuAdmin__addEdit button:first-child:hover {
   background-color: #002558;
 }
 
-.htuAdmin__addButtons button:first-child:active {
+.htuAdmin__addEdit button:first-child:active {
   background-color: #3d80dd;
 }
 
-.htuAdmin__addButtons button:last-child {
+.htuAdmin__addEdit button:last-child {
   background-color: #ffc600;
-  font-size: 16px;
   color: #fff;
   font-weight: 700;
   transition: all 0.3s linear;
 }
-.htuAdmin__addButtons button:last-child:hover {
+.htuAdmin__addEdit button:last-child:hover {
   background-color: #fdc600;
 }
-.htuAdmin__addButtons button:last-child:active {
+.htuAdmin__addEdit button:last-child:active {
   background-color: #ecd78b;
 }
 
@@ -64,18 +63,31 @@
 .htuAdmin__content--left {
   width: 50%;
 }
-.htuAdmin__content--left input {
+.htuAdmin__content--left .titleInput {
   display: block;
   margin-bottom: 30px;
   padding: 10px 5px;
   border: 1px solid #3e3e3e;
   width: 100%;
 }
-.htuAdmin__content--left textarea {
+.htuAdmin__content--left .descriptionInput {
   display: block;
   padding: 10px;
   width: 100%;
   height: 200px;
+  border: 1px solid #3e3e3e;
+}
+
+.htuAdmin__add button {
+  padding: 8px 15px;
+  color: #fff;
+  font-weight: 700;
+}
+.htuAdmin__add button:first-child {
+  background-color: #002558;
+}
+.htuAdmin__add button:last-child {
+  background-color: #8b0000;
 }
 
 .htuAdmin__content--right {
@@ -84,15 +96,41 @@
   text-align: center;
 }
 
-.fileInput input {
-	display: none;
+/* ******************************************@media (max-width: 992px)***************************** */
+@media (max-width: 992px) {
+  .htuAdmin__content--content {
+    flex-direction: column;
+  }
+  .htuAdmin__content--left {
+    width: 100%;
+  }
+  .htuAdmin__content--right {
+    width: 100%;
+    margin-top: 30px;
+  }
+  .htuAdmin__addEdit button {
+    padding: 8px 50px;
+  }
 }
 
-.fileInput input + label {
-	padding: 5px;
-	width: 200px;
-	height: 120px;
-	border-radius: 15px;
-	background-color: blue;
-	color: white;
+/* ******************************************@media (max-width: 768px)***************************** */
+
+@media (max-width: 768px) {
+  .htuAdmin__addEdit button {
+    padding: 8px 25px;
+    font-size: 14px;
+  }
+}
+
+/* ******************************************@media (max-width: 575px)***************************** */
+
+@media (max-width: 575px) {
+  .htuAdmin__content {
+    width: 90%;
+    padding: 15px 20px;
+  }
+  .htuAdmin__addEdit button {
+    padding: 8px 15px;
+    font-size: 12px;
+  }
 }

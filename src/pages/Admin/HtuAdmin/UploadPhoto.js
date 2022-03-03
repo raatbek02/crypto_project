@@ -1,24 +1,29 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { add_uploadImage } from "../../../store/uploadImage";
 import "./UploadPhoto.css";
 
 function UploadPhoto() {
-  const [selectedImage, setSelectedImage] = useState();
+  // const [selectedImage, setSelectedImage] = useState();
+  const dispatch = useDispatch();
+  const selectedImage = useSelector((s) => s.uploadImage.uploadImage);
+  console.log("selectedImage", selectedImage);
 
   // This function will be triggered when the file field change
   const imageChange = (e) => {
     if (e.target.files && e.target.files.length > 0) {
-      setSelectedImage(e.target.files[0]);
+      dispatch(add_uploadImage(e.target.files[0]));
     }
   };
 
   // This function will be triggered when the "Remove This Image" button is clicked
   const removeSelectedImage = () => {
-    setSelectedImage();
+    dispatch(add_uploadImage());
   };
 
   return (
     <>
-      <div style={styles.container}>
+      <div>
         <div className="fileInput">
           <label>
             <input
@@ -27,20 +32,18 @@ function UploadPhoto() {
               onChange={imageChange}
               id="uploadFile"
             />
-            Upload
+            Upload Image
           </label>
         </div>
 
         {selectedImage && (
-          <div style={styles.preview}>
-            <img
-              src={URL.createObjectURL(selectedImage)}
-              style={styles.image}
-              alt="Thumb"
-            />
-            <button onClick={removeSelectedImage} style={styles.delete}>
-              Remove This Image
-            </button>
+          <div className="fileResults">
+            <div className="fileImages">
+              <img src={URL.createObjectURL(selectedImage)} alt="Thumb" />
+            </div>
+            <div className="fileDelete">
+              <button onClick={removeSelectedImage}>Remove This Image</button>{" "}
+            </div>
           </div>
         )}
       </div>
@@ -51,28 +54,28 @@ function UploadPhoto() {
 export default UploadPhoto;
 
 // Just some styles
-const styles = {
-  container: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    paddingTop: 50,
-  },
-  preview: {
-    marginTop: 50,
-    display: "flex",
-    flexDirection: "column",
-  },
-  image: { maxWidth: "100%", maxHeight: 320 },
-  delete: {
-    cursor: "pointer",
-    padding: 15,
-    background: "red",
-    color: "white",
-    border: "none",
-  },
-};
+// const styles = {
+//   container: {
+//     display: "flex",
+//     flexDirection: "column",
+//     justifyContent: "center",
+//     alignItems: "center",
+//     paddingTop: 50,
+//   },
+//   preview: {
+//     marginTop: 50,
+//     display: "flex",
+//     flexDirection: "column",
+//   },
+//   image: { maxWidth: "100%", maxHeight: 320 },
+//   delete: {
+//     cursor: "pointer",
+//     padding: 15,
+//     background: "red",
+//     color: "white",
+//     border: "none",
+//   },
+// };
 
 //     const [imageName, setImageName] = useState("");
 //   const [image, setImage] = useState();

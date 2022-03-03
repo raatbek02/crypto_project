@@ -8,6 +8,7 @@ import products from "./products";
 import activeYearNum from "./activeYearNum";
 import activeBurger from "./activeBurger";
 import htu_store from "./htu_store";
+import uploadImage from "./uploadImage";
 import isAuth from "./isAuth";
 
 export default configureStore({
@@ -20,7 +21,8 @@ export default configureStore({
     products,
     activeYearNum,
     activeBurger,
-    isAuth,
     htu_store,
+    uploadImage,
+    isAuth,
   },
 });
