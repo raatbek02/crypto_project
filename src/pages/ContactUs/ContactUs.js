@@ -25,7 +25,7 @@ function ContactUs() {
     };
 
     $host
-      .post(`api/backcall`, data, {
+      .post(`api/backcall/`, data, {
         headers: {
           "Content-Type": "application/json",
         },

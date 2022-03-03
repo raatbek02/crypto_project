@@ -20,7 +20,7 @@ function Header() {
           <span></span>
         </div>
         <div className="header__title">
-          <h1>BitcoinCity</h1>
+          <h1>BitcoinAll</h1>
         </div>
         {/* <div className="header__assets">
           <ul>
