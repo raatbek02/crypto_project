@@ -21,6 +21,7 @@ function Table() {
   const dispatch = useDispatch();
   const products = useSelector((s) => s.products.products);
   const activeYearNum = useSelector((s) => s.activeYearNum.activeYearNum);
+  const deviceItem = useSelector((s) => s.deviceItem.deviceItem);
 
   let total_sum = 0;
 
@@ -182,7 +183,6 @@ function Table() {
   };
 
   const resetSale = async () => {
-   
     await $host.put(`api/reset-table/`).then((res) => {
       console.log("Success reset");
     });
@@ -345,7 +345,9 @@ function Table() {
               <div className="table__cell">{el.totality}</div>
               <div className="table__cell">{el.price}</div>
               <div className="table__cell">{el.price_device}</div>
-              <div className="table__cell">{el.price_per_quantity}</div>
+              <div className="table__cell">
+                Price per {deviceItem[0] && deviceItem[0].quantity} device
+              </div>
             </div>
           ))}
         </div>
@@ -388,9 +390,12 @@ function Table() {
               >
                 <div className="table__cell">{item.count}</div>
                 <div className="table__cell">{item.totality.toFixed(2)}</div>
-                <div className="table__cell">{item.price}</div>
-                <div className="table__cell">{item.price_device}</div>
-                <div className="table__cell">{item.price_per_quantity}</div>
+                <div className="table__cell">{item.price}$</div>
+                <div className="table__cell">{item.price_device}$</div>
+                <div className="table__cell">
+                  {item.price_per_quantity}
+                  {item.price_per_quantity ? "$" : null}
+                </div>
               </div>
             </div>
           ))}

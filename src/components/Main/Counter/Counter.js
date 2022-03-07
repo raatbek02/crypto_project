@@ -10,25 +10,26 @@ import { minusDevice, plusDevice } from "../../../store/device_count";
 import "./Counter.css";
 import { toast } from "react-toastify";
 import { addProducts } from "../../../store/products";
+import { setDeviceItem } from "../../../store/deviceItem";
 
 function Counter() {
   const [count, setCount] = useState(1);
-  const [device, setDevice] = useState([]);
+  //   const [device, setDevice] = useState([]);
   const [typing_price, setTyping_price] = useState("25000");
   const [price, setPrice] = useState("");
 
   const dispatch = useDispatch();
-  const products = useSelector((s) => s.products.products);
+//   const products = useSelector((s) => s.products.products);
+  const deviceItem = useSelector((s) => s.deviceItem.deviceItem);
   const activeYearNum = useSelector((s) => s.activeYearNum.activeYearNum);
 
   const warn_price = () => toast.warn("price must be above 25000");
-  console.log("price", price);
-  console.log("device", device);
+
   useEffect(() => {
     $host
       .get(`api/device-item/`)
       .then(({ data }) => {
-        setDevice(data);
+        dispatch(setDeviceItem(data));
       })
       .catch((e) => {
         //   console.log("error price");
@@ -51,7 +52,7 @@ function Counter() {
         $host
           .get(`api/device-item/`)
           .then(({ data }) => {
-            setDevice(data);
+            dispatch(setDeviceItem(data));
           })
           .catch((e) => {
             // console.log("error price");
@@ -86,7 +87,7 @@ function Counter() {
         $host
           .get(`api/device-item/`)
           .then(({ data }) => {
-            setDevice(data);
+            dispatch(setDeviceItem(data));
           })
           .catch((e) => {
             // console.log("error price");
@@ -120,7 +121,7 @@ function Counter() {
           $host
             .get(`api/device-item/`)
             .then(({ data }) => {
-              setDevice(data);
+              dispatch(setDeviceItem(data));
             })
             .catch((e) => {
               // console.log("error price");
@@ -157,15 +158,15 @@ function Counter() {
   //   };
   return (
     <div className="counter">
-      {device &&
-        device.map((el) => (
+      {deviceItem &&
+        deviceItem.map((el) => (
           <div key={el.id}>
             {localStorage.setItem(
               "device_local_price",
               JSON.stringify(el.product.price)
             )}
 
-            <div className="counter__title">{el.product.title}</div>
+            <div className="counter__title">Bitcoin Product Device</div>
             <div className="counter__content">
               <div className="counter__item">
                 <p className="counter__item--left">Quantity of device</p>
