@@ -85,12 +85,16 @@
   margin-bottom: 20px;
 }
 .about__team--logo {
-  width: 85%;
+  /* width: 85%; */
+  width: 180px;
+  height: 180px;
   margin: 0 auto;
 }
 .about__team--logo img {
   width: 100%;
+  height: 100%;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .about__team--name {
@@ -138,18 +142,16 @@
   }
 }
 
-
 /* -----------------------------@media (max-width: 575px)----------------------------- */
 @media (max-width: 575px) {
-	  .about__statistics--content {
+  .about__statistics--content {
     padding: 20px 10px;
   }
 
-	  .about__statistics--item p:first-child {
+  .about__statistics--item p:first-child {
     font-size: 18px;
   }
   .about__statistics--item p:last-child {
     font-size: 14px;
   }
-
 }

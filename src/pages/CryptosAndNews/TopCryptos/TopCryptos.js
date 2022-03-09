@@ -1,6 +1,8 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { CircularProgress } from "@mui/material";
+
 import Header from "../../../components/Main/Header/Header";
 import { addCoinsTop100 } from "../../../store/coins_top100";
 import CryptoNews from "../CryptoNews/CryptoNews";
@@ -9,6 +11,7 @@ import "./TopCryptos.css";
 function TopCryptos() {
   const dispatch = useDispatch();
   const coinsTop = useSelector((s) => s.coins_top100.coins_top100);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
@@ -19,8 +22,20 @@ function TopCryptos() {
       .then(({ data }) => {
         dispatch(addCoinsTop100(data));
         //   console.log(data);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }, []);
+
+  if (loading) {
+    return (
+      <div className="loading--block">
+        <CircularProgress color="error" />
+      </div>
+    );
+  }
+
   return (
     <div className="topCryptos">
       <div className="topCryptos__container">

@@ -4,10 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { $host } from "../../http";
 import { add_htu } from "../../store/htu_store";
 
+import { CircularProgress } from "@mui/material";
+
 import "./Htu.css";
 
 function Htu() {
   //   const [htu_store, setHtu_store] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   const htu_store = useSelector((s) => s.htu_store.htu_store);
   const dispatch = useDispatch();
 
@@ -22,10 +26,21 @@ function Htu() {
         })
         .catch((e) => {
           console.log("error", e);
+        })
+        .finally(() => {
+          setLoading(false);
         });
     };
     getHtu_store();
   }, []);
+
+  if (loading) {
+    return (
+      <div className="loading--block">
+        <CircularProgress color="error" />
+      </div>
+    );
+  }
 
   return (
     <div className="htu">
