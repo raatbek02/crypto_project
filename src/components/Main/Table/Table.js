@@ -20,7 +20,6 @@ function Table() {
   const [sell_id, setSell_id] = useState(null);
   const [sold, setSold] = useState(null);
   const [pricePerQuantity, setPricePerQuantity] = useState(null);
-  console.log("pricePerQuantity", pricePerQuantity);
 
   const dispatch = useDispatch();
   const products = useSelector((s) => s.products.products);
@@ -34,13 +33,10 @@ function Table() {
 
     if (products.results[i].price_per_quantity !== null) {
       total_sum = total_sum + products.results[i].price_per_quantity;
-
-      console.log("totaaaaaaal_sum", total_sum);
     }
   }
-  console.log("total_sum", total_sum);
 
-  const success_sell = () => toast.success("Successfully sold");
+  //   const success_sell = () => toast.success("Successfully sold");
   const success_cancel = () => toast.success(" Sale canceled");
   const warning_sell = () => toast.warn("To sell, select a month");
   const warning_cancel = () =>
@@ -114,7 +110,7 @@ function Table() {
           },
         })
         .then((res) => {
-          success_sell();
+          //  success_sell();
           setActive_month(null);
           setSell_id(null);
           setSellModal(true);
@@ -170,7 +166,7 @@ function Table() {
         });
 
       await $host.get(`api/previo-table/?get_id=${sell_id}`).then((res) => {
-        console.log("Prev data");
+      //   console.log("Prev data");
       });
 
       await $host
