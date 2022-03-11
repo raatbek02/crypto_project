@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.ca379c7c.css",
-    "main.js": "/static/js/main.15cb60c8.js",
+    "main.css": "/static/css/main.13e01718.css",
+    "main.js": "/static/js/main.12e3b119.js",
     "static/js/787.18aeafbd.chunk.js": "/static/js/787.18aeafbd.chunk.js",
-    "static/media/about_us_bitcoincity.png": "/static/media/about_us_bitcoincity.0a716e3a94809968a4fe.png",
+    "static/media/bitcoinModal2.webp": "/static/media/bitcoinModal2.5be76f5644dab4afedf7.webp",
     "index.html": "/index.html",
     "static/media/profile.svg": "/static/media/profile.2d92b7fe125cc58e1ebfb1cae86803ce.svg",
     "static/media/profile_white.svg": "/static/media/profile_white.127938f11b4fe34164537627b0a7c74d.svg",
     "static/media/left.svg": "/static/media/left.eac6d94d7fd1b423b8f47bc253fdeb6e.svg",
     "static/media/right.svg": "/static/media/right.d1b9803779354bef96c92dc12287311c.svg",
-    "main.ca379c7c.css.map": "/static/css/main.ca379c7c.css.map",
-    "main.15cb60c8.js.map": "/static/js/main.15cb60c8.js.map",
+    "main.13e01718.css.map": "/static/css/main.13e01718.css.map",
+    "main.12e3b119.js.map": "/static/js/main.12e3b119.js.map",
     "787.18aeafbd.chunk.js.map": "/static/js/787.18aeafbd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ca379c7c.css",
-    "static/js/main.15cb60c8.js"
+    "static/css/main.13e01718.css",
+    "static/js/main.12e3b119.js"
   ]
 }

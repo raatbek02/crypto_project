@@ -8,6 +8,7 @@ import { addProducts } from "../../../store/products";
 import { set_activeYearNum } from "../../../store/activeYearNum";
 
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import SellModal from "../../UI/SellModal/SellModal";
 
 function Table() {
   //   const [products, setProducts] = useState([]);
@@ -15,8 +16,11 @@ function Table() {
   //   const [active_yearNum, setActive_yearNum] = useState(1);
   const [avtive_yearName, setActive_yearName] = useState("1y");
   const [active_month, setActive_month] = useState(null);
+  const [sellModal, setSellModal] = useState(false);
   const [sell_id, setSell_id] = useState(null);
   const [sold, setSold] = useState(null);
+  const [pricePerQuantity, setPricePerQuantity] = useState(null);
+  console.log("pricePerQuantity", pricePerQuantity);
 
   const dispatch = useDispatch();
   const products = useSelector((s) => s.products.products);
@@ -113,6 +117,7 @@ function Table() {
           success_sell();
           setActive_month(null);
           setSell_id(null);
+          setSellModal(true);
         });
 
       await $host
@@ -371,6 +376,7 @@ function Table() {
                     setActive_month(item.id);
                     setSell_id(item.id);
                     setSold(item.is_solid);
+                    setPricePerQuantity(item.price_device);
                   }}
                   className={
                     item.is_solid
@@ -400,6 +406,23 @@ function Table() {
             </div>
           ))}
       </div>
+      <SellModal active={sellModal} setActive={setSellModal}>
+        <div className="table__modal">
+          <div className="table__modal--title">Congratulations</div>
+          <div className="table__modal--content">
+            <p>
+              You have earned{" "}
+              <span>
+                {deviceItem[0] && deviceItem[0].quantity * pricePerQuantity}$
+              </span>{" "}
+              this month
+            </p>
+            <p>
+              Your total for 12 months:<span>{total_sum}$</span>
+            </p>
+          </div>
+        </div>
+      </SellModal>
     </div>
   );
 }

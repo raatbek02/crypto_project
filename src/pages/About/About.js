@@ -1,16 +1,23 @@
 import React, { useEffect, useState } from "react";
-import about_us_bitcoincity from "../../assets/images/about_us_bitcoincity.png";
+import { CircularProgress } from "@mui/material";
+
 import { $host } from "../../http";
 import "./About.css";
 
 function About() {
   const [about, setAbout] = useState([]);
   const [team, setTeam] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    $host.get(`api/about`).then(({ data }) => {
-      setAbout(data);
-    });
+    $host
+      .get(`api/about`)
+      .then(({ data }) => {
+        setAbout(data);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
 
   useEffect(() => {
@@ -18,6 +25,14 @@ function About() {
       setTeam(data);
     });
   }, []);
+
+  if (loading) {
+    return (
+      <div className="loading--block">
+        <CircularProgress color="error" />
+      </div>
+    );
+  }
 
   return (
     <div className="about">
