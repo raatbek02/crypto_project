@@ -1,16 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "./App.css";
-import AppRoutes from "./components/AppRoutes";
 
 import "react-toastify/dist/ReactToastify.css";
 import Sidebar from "./components/Sidebar/Sidebar";
 import ContentBlock from "./components/ContentBlock/ContentBlock";
 import { useDispatch, useSelector } from "react-redux";
 import lottie from "lottie-web";
-import Modal from "./components/UI/Modal/Modal";
 import WelcomeModal from "./components/UI/WelcomeModal/WelcomeModal";
-import Header from "./components/Main/Header/Header";
 
 function App() {
   const [activeWelcome, setActiveWelcome] = useState(false);
