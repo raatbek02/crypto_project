@@ -10,7 +10,6 @@ import {
   CRYPTOS_AND_NEWS,
   HOME,
   HTU,
-  TEST,
   ABOUT,
   CONTACT_US,
 } from "./utils/consts";

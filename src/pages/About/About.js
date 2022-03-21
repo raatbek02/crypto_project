@@ -85,7 +85,7 @@ function About() {
                     <img src={el.image} alt="" />
                   </div>
                   <div className="about__team--name">{el.title}</div>
-                  {/* <div className="about__team--position">{el.position}</div> */}
+                  <div className="about__team--position">{el.position}</div>
                 </div>
               ))}
           </div>
